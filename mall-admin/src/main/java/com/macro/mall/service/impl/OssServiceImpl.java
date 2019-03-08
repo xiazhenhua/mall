@@ -4,6 +4,7 @@ import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
+import com.macro.mall.dto.OssCallbackParam;
 import com.macro.mall.dto.OssCallbackResult;
 import com.macro.mall.dto.OssPolicyResult;
 import com.macro.mall.service.OssService;
@@ -55,10 +56,10 @@ public class OssServiceImpl implements OssService {
 		// 文件大小
 		long maxSize = ALIYUN_OSS_MAX_SIZE * 1024 * 1024;
 		// 回调
-//		OssCallbackParam callback = new OssCallbackParam();
-//		callback.setCallbackUrl(ALIYUN_OSS_CALLBACK);
-//		callback.setCallbackBody("filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}");
-//		callback.setCallbackBodyType("application/x-www-form-urlencoded");
+		OssCallbackParam callback = new OssCallbackParam();
+		callback.setCallbackUrl(ALIYUN_OSS_CALLBACK);
+		callback.setCallbackBody("filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}");
+		callback.setCallbackBodyType("application/x-www-form-urlencoded");
 		// 提交节点
 		String action = "http://" + ALIYUN_OSS_BUCKET_NAME + "." + ALIYUN_OSS_ENDPOINT;
 		try {
@@ -77,6 +78,7 @@ public class OssServiceImpl implements OssService {
 			result.setDir(dir);
 //			result.setCallback(callbackData);
 			result.setHost(action);
+			result.setSuccess_action_status("200");
 		} catch (Exception e) {
 			LOGGER.error("签名生成失败", e);
 		}
@@ -93,6 +95,7 @@ public class OssServiceImpl implements OssService {
 		result.setMimeType(request.getParameter("mimeType"));
 		result.setWidth(request.getParameter("width"));
 		result.setHeight(request.getParameter("height"));
+		result.setSuccess_action_status("200");
 		return result;
 	}
 

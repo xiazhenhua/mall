@@ -10,6 +10,7 @@ public class OssPolicyResult {
     private String signature;
     private String dir;
     private String host;
+    private String success_action_status;
 
     public String getAccessKeyId() {
         return accessKeyId;
@@ -50,4 +51,13 @@ public class OssPolicyResult {
     public void setHost(String host) {
         this.host = host;
     }
+
+	public String getSuccess_action_status() {
+		return success_action_status;
+	}
+
+	public void setSuccess_action_status(String success_action_status) {
+		this.success_action_status = success_action_status;
+	}
+    
 }

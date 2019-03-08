@@ -9,6 +9,7 @@ public class OssCallbackResult {
     private String mimeType;
     private String width;
     private String height;
+    private String success_action_status;
 
     public String getFilename() {
         return filename;
@@ -49,4 +50,13 @@ public class OssCallbackResult {
     public void setHeight(String height) {
         this.height = height;
     }
+
+	public String getSuccess_action_status() {
+		return success_action_status;
+	}
+
+	public void setSuccess_action_status(String success_action_status) {
+		this.success_action_status = success_action_status;
+	}
+    
 }

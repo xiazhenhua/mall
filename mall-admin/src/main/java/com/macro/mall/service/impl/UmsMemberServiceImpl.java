@@ -51,8 +51,7 @@ public class UmsMemberServiceImpl implements UmsMemberService{
 			criteria.andStatusEqualTo(memberQueryParam.getStatus());
 		}
 		if (!StringUtils.isEmpty(memberQueryParam.getKeyword())) {
-			criteria.andUsernameLike(memberQueryParam.getKeyword());
-			criteria.andNicknameLike(memberQueryParam.getKeyword());
+			criteria.andUsernameLike("%" + memberQueryParam.getKeyword() + "%");
 		}
 		return memberMapper.selectByExample(memberExample);
 	}

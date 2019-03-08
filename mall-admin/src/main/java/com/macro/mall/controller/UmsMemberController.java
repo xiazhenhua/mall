@@ -39,7 +39,9 @@ public class UmsMemberController {
 	    @ResponseBody
 	    @PreAuthorize("hasAuthority('ums:member:create')")
 	    public Object create(@RequestBody UmsMemberParam memberParam, BindingResult bindingResult) {
-	        int count = memberService.create(memberParam);
+	        //为新创建的用户设置初始密码123456
+		 	memberParam.setPassword("123456");
+		 	int count = memberService.create(memberParam);
 	        if (count > 0) {
 	            return new CommonResult().success(count);
 	        } else {
@@ -68,14 +70,6 @@ public class UmsMemberController {
 	        List<UmsMember> memberList = memberService.list(memberQueryParam, pageSize, pageNum);
 	        return new CommonResult().pageSuccess(memberList);
 	    }
-
-	    @ApiOperation("根据商品名称或货号模糊查询")
-	    @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
-	    @ResponseBody
-	    public Object getList(String  keyword) {
-	        List<UmsMember> memberList = memberService.list(keyword);
-	        return new CommonResult().success(memberList);
-	    }
 	    
 	    @ApiOperation("修改启用状态")
 	    @RequestMapping(value = "/update/status",method = RequestMethod.POST)
@@ -91,10 +85,10 @@ public class UmsMemberController {
 	        }
 	    }
 	    @ApiOperation("删除会员账户")
-	    @RequestMapping(value = "/update/delete",method = RequestMethod.POST)
+	    @RequestMapping(value = "/update/delete/{id}",method = RequestMethod.POST)
 	    @ResponseBody
 	    @PreAuthorize("hasAuthority('ums:member:delete')")
-	    public Object updateDeleteStatus(@RequestParam("id") Long id) {
+	    public Object updateDeleteStatus(@PathVariable Long id) {
 	        int count = memberService.deleteMember(id);
 	        if (count > 0) {
 	            return new CommonResult().success(count);
