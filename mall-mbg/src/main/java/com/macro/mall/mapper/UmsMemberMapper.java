@@ -17,6 +17,10 @@ public interface UmsMemberMapper {
     int insertSelective(UmsMember record);
 
     List<UmsMember> selectByExample(UmsMemberExample example);
+    
+    UmsMember selectByUsername(String username);
+    
+    UmsMember loginMember(String username,String password);
 
     UmsMember selectByPrimaryKey(Long id);
 

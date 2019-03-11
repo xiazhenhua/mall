@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Mobile Shop</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  type="text/css">
+    <link rel="stylesheet" href="fonts/font-slider.css" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery.min.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap.min.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		body{
+			color: white;
+			background-color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					欢迎来到Pray电商,请登录
+				</div>
+				<div class="col-xs-6">
+					<ul class="top-link">
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> 我的账户</a></li>
+						<li><a href="goToContact"><span class="glyphicon glyphicon-envelope"></span> 联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Header-->
+	<header class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div id="logo"><img src="images/logo.png" /></div>
+			</div>
+			<div class="col-md-4">
+				<form class="form-search">  
+					<input type="text" class="input-medium search-query">  
+					<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>  
+				</form>
+			</div>
+			<div class="col-md-4">
+				<div id="cart"><a class="btn btn-1" href="/goToCart"><span class="glyphicon glyphicon-shopping-cart"></span>CART </a></div>
+			</div>
+		</div>
+	</header>
+
+	<!--菜单栏-->
+	<!--Navigation-->
+    <nav id="menu" class="navbar">
+		<div class="container">
+			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/goToIndex">Home</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">电脑专区</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Window</a></li>
+									<li><a href="/goToCategory">MacBook</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">手机</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Dell</a></li>
+									<li><a href="/goToCategory">Asus</a></li>
+									<li><a href="/goToCategory">Samsung</a></li>
+									<li><a href="/goToCategory">Lenovo</a></li>
+									<li><a href="/goToCategory">Acer</a></li>
+								</ul>
+							</div> 
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">影音娱乐</a>
+						<div class="dropdown-menu" style="margin-left: -203.625px;">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Iphone</a></li>
+									<li><a href="/goToCategory">Samsung</a></li>
+									<li><a href="/goToCategory">Nokia</a></li>
+									<li><a href="/goToCategory">Lenovo</a></li>
+									<li><a href="/goToCategory">Google</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Nexus</a></li>
+									<li><a href="/goToCategory">Dell</a></li>
+									<li><a href="/goToCategory">Oppo</a></li>
+									<li><a href="/goToCategory">Blackberry</a></li>
+									<li><a href="/goToCategory">HTC</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">LG</a></li>
+									<li><a href="/goToCategory">Q-Mobiles</a></li>
+									<li><a href="/goToCategory">Sony</a></li>
+									<li><a href="/goToCategory">Wiko</a></li>
+									<li><a href="/goToCategory">T&T</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">耳机专区</a>
+						<div class="dropdown-menu" style="margin-left: -203.625px;">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Iphone</a></li>
+									<li><a href="/goToCategory">Samsung</a></li>
+									<li><a href="/goToCategory">Nokia</a></li>
+									<li><a href="/goToCategory">Lenovo</a></li>
+									<li><a href="/goToCategory">Google</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Nexus</a></li>
+									<li><a href="/goToCategory">Dell</a></li>
+									<li><a href="/goToCategory">Oppo</a></li>
+									<li><a href="/goToCategory">Blackberry</a></li>
+									<li><a href="/goToCategory">HTC</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">LG</a></li>
+									<li><a href="/goToCategory">Q-Mobiles</a></li>
+									<li><a href="/goToCategory">Sony</a></li>
+									<li><a href="/goToCategory">Wiko</a></li>
+									<li><a href="/goToCategory">T&T</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="/goToCategory">摄影专区</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--//////////////////////////////////////////////////-->
+	<!--///////////////////Account Page///////////////////-->
+	<!--//////////////////////////////////////////////////-->
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<ul class="breadcrumb">
+						<li><a href="/goToIndex">Home</a></li>
+						<li><a href="/goToAccount">Account</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="list-group">
+						<li class="list-group-item active">我的账户</li>
+						<li class="list-group-item"><a href="#"
+							target="mainFrame">
+							<span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+						</li>
+						<li class="list-group-item"><a href="/goToCart" target="_blank">
+							<span class="glyphicon glyphicon-shopping-cart"></span> 我的购物车</a>
+						</li>
+						<li class="list-group-item"><a href="collectList.html"
+							target="mainFrame">
+							<span class="glyphicon glyphicon-hdd"></span> 我的收藏</a>
+						</li>
+						<li class="list-group-item">
+							<a href="orderList.html" target="mainFrame">
+							<span class="glyphicon glyphicon-folder-open"></span> 我的订单</a>
+						</li>
+					</ul>
+					<ul class="list-grou p">
+						<li class="list-group-item active"> 账户信息</li>
+						<li class="list-group-item"> 
+							<a href="carTrans.html" target="mainFrame">
+							<span class="glyphicon glyphicon-comment"></span> 评价管理</a>	
+						</li>
+						<li class="list-group-item"> 
+							<a href="flightInfoManage.html" target="mainFrame">
+							<span class="glyphicon glyphicon-home"></span> 地址管理</a>
+						</li>
+						<li class="list-group-item">
+							<a href="flightTotal.html" target="mainFrame">
+							<span class="glyphicon glyphicon-eye-open"></span> 浏览记录</a>
+						</li>
+						<li class="list-group-item">
+							<a href="flightTotal.html" target="mainFrame">
+							<span class="glyphicon glyphicon-usd"></span> 我的优惠卷</a>	
+						</li>
+						<li class="list-group-item">
+							<a href="backIndex.html" target="_blank">
+							<span class="glyphicon glyphicon-usd"></span> 跳转至后台管理界面</a>	
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-9">
+					<iframe src="getDashBoard" name="mainFrame"
+						style="width: 98%; height: 600px" border=0 frameborder=0> </iframe>
+		
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="wrap-footer">
+				<div class="row">
+					<div class="col-md-3 col-footer footer-1">
+						<img src="images/logofooter.png" />
+						<p>Electronic Business 本网站仅用于2018级天软毕业设计使用.</p>
+					</div>
+					<div class="col-md-3 col-footer footer-2">
+						<div class="heading"><h4>顾客服务</h4></div>
+						<ul>
+							<li><a href="#">关于我们</a></li>
+							<li><a href="#">开发者信息</a></li>
+							<li><a href="#">隐私</a></li>
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">联系我们</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-3">
+						<div class="heading"><h4>账户信息</h4></div>
+						<ul>
+							<li><a href="#">我的账户</a></li>
+							<li><a href="#">订单查询</a></li>
+							<li><a href="#">我的收藏</a></li>
+							<li><a href="#">浏览记录</a></li>
+							<li><a href="#">我的优惠卷</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-4">
+						<div class="heading"><h4>联系我们</h4></div>
+						<ul>
+							<li><span class="glyphicon glyphicon-home"></span>地址：天津市西青区宾水西道399号</li>
+							<li><span class="glyphicon glyphicon-earphone"></span>+91 8866888111</li>
+							<li><span class="glyphicon glyphicon-envelope"></span>邮编：300387</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6" id="foot-center">
+						Copyright &copy; 2018. &nbsp;&nbsp;Pray版权所有.
+					</div>
+					<div class="col-md-6">
+						<div class="pull-right">
+							<ul>
+								<li><img src="images/visa-curved-32px.png" /></li>
+								<li><img src="images/paypal-curved-32px.png" /></li>
+								<li><img src="images/discover-curved-32px.png" /></li>
+								<li><img src="images/maestro-curved-32px.png" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

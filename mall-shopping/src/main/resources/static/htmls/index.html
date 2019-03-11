@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <title>Mobile Shop</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/fasthover.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  type="text/css">
+    <link rel="stylesheet" href="fonts/font-slider.css" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery.min.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap-3.1.1.min.js"></script>
+	
+</head>
+
+<body>
+	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					欢迎来到Pray电商,请<a href="login.html">登录</a>
+				</div>
+				<div class="col-xs-6">
+					<ul class="top-link">
+						<li><a href="/goToAccount"><span class="glyphicon glyphicon-user"></span> 我的账户</a></li>
+						<li><a href="/goToContact"><span class="glyphicon glyphicon-envelope"></span> 联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Header-->
+	<header class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div id="logo"><img src="images/logo.png" /></div>
+			</div>
+			<div class="col-md-4">
+				<form class="form-search">  
+					<input type="text" class="input-medium search-query">  
+					<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>  
+				</form>
+			</div>
+			<div class="col-md-4">
+				<div id="cart"><a class="btn btn-1" href="/goToCart"><span class="glyphicon glyphicon-shopping-cart"></span>CART </a></div>
+			</div>
+		</div>
+	</header>
+
+	<!--菜单栏-->
+	<!--Navigation-->
+    <nav id="menu" class="navbar">
+		<div class="container">
+			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="goToIndex">Home</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">电脑专区</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Window</a></li>
+									<li><a href="/goToCategory">MacBook</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">手机专区</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="goToCategory">Dell</a></li>
+									<li><a href="goToCategory">Asus</a></li>
+									<li><a href="goToCategory">Samsung</a></li>
+									<li><a href="goToCategory">Lenovo</a></li>
+									<li><a href="goToCategory">Acer</a></li>
+								</ul>
+							</div> 
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">影音娱乐</a>
+						<div class="dropdown-menu" style="margin-left: -203.625px;">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Iphone</a></li>
+									<li><a href="/goToCategory">Samsung</a></li>
+									<li><a href="/goToCategory">Nokia</a></li>
+									<li><a href="/goToCategory">Lenovo</a></li>
+									<li><a href="/goToCategory">Google</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Nexus</a></li>
+									<li><a href="/goToCategory">Dell</a></li>
+									<li><a href="/goToCategory">Oppo</a></li>
+									<li><a href="/goToCategory">Blackberry</a></li>
+									<li><a href="/goToCategory">HTC</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">耳机专区</a>
+						<div class="dropdown-menu" style="margin-left: -203.625px;">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Iphone</a></li>
+									<li><a href="/goToCategory">Samsung</a></li>
+									<li><a href="/goToCategory">Nokia</a></li>
+									<li><a href="/goToCategory">Lenovo</a></li>
+									<li><a href="/goToCategory">Google</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Nexus</a></li>
+									<li><a href="/goToCategory">Dell</a></li>
+									<li><a href="/goToCategory">Oppo</a></li>
+									<li><a href="/goToCategory">Blackberry</a></li>
+									<li><a href="/goToCategory">HTC</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">摄影专区</a>
+						<div class="dropdown-menu"  style="margin-left: -53.625px;">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/goToCategory">Dell</a></li>
+									<li><a href="/goToCategory">Asus</a></li>
+									<li><a href="/goToCategory">Samsung</a></li>
+									<li><a href="/goToCategory">Lenovo</a></li>
+									<li><a href="/goToCategory">Acer</a></li>
+								</ul>
+							</div> 
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--//////////////////////////////////////////////////-->
+	<!--///////////////////HomePage///////////////////////-->
+	<!--//////////////////////////////////////////////////-->
+	<div id="page-content" class="home-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- Carousel -->
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators hidden-xs">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="images/i2/O1CN01qGFxzC2EjkLBLB900_!!1695308781.jpg" alt="First slide">
+								<!-- Static Header -->
+								<div class="header-text hidden-xs">
+									<div class="col-md-12 text-center">
+									</div>
+								</div><!-- /header-text -->
+							</div>
+							<div class="item">
+								<img src="images/i2/TB1ar9OxXzqK1RjSZFCSuvbxVXa.jpg" alt="Second slide">
+								<!-- Static Header -->
+								<div class="header-text hidden-xs">
+									<div class="col-md-12 text-center">
+									</div>
+								</div><!-- /header-text -->
+							</div>
+							<div class="item">
+								<img src="images/i2/O1CN01sBCf7729zFfZMxpI7_!!1714128138.jpg" alt="Third slide">
+								<!-- Static Header -->
+								<div class="header-text hidden-xs">
+									<div class="col-md-12 text-center">
+									</div>
+								</div><!-- /header-text -->
+							</div>
+						</div>
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div><!-- /carousel -->
+				</div>
+			</div>
+			<!--开始布局-->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading">
+						<h3>热卖爆品</h3>
+					</div>
+					<!-- 爆品推荐  -->
+					<!-- banner-bottom -->
+					<div class="banner-bottom">
+						<div class="container">
+							<div class="col-md-5 wthree_banner_bottom_left">
+								<div class="video-img">
+								</div> 
+							</div>
+							<div class="col-md-7 wthree_banner_bottom_right">
+								<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+									<ul id="myTab" class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">手机</a></li>
+										<li role="presentation"><a href="#audio" role="tab" id="audio-tab" data-toggle="tab" aria-controls="audio">娱乐影音</a></li>
+										<li role="presentation"><a href="#video" role="tab" id="video-tab" data-toggle="tab" aria-controls="video">电脑</a></li>
+										<li role="presentation"><a href="#tv" role="tab" id="tv-tab" data-toggle="tab" aria-controls="tv">手表</a></li>
+										<li role="presentation"><a href="#kitchen" role="tab" id="kitchen-tab" data-toggle="tab" aria-controls="kitchen">相机</a></li>
+									</ul>
+									<div id="myTabContent" class="tab-content">
+										<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+											<div class="agile_ecommerce_tabs">
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/5bbec333Nc3462520.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/5bbec334N98908c1f.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/5bbec335Nff442b28.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/5bbf1f78N5c33bd84.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/7.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/3.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/4.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/5.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div> 
+													<h5><a href="/goToSingle">华为手机</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥380</span> <i class="item_price">￥350</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Mobile Phone1" /> 
+															<input type="hidden" name="amount" value="350.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>  
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/8.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/9.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/10.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/11.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/12.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/13.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/14.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/15.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">苹果手机</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥330</span> <i class="item_price">￥302</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Mobile Phone2" /> 
+															<input type="hidden" name="amount" value="302.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/16.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/17.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/18.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/19.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/20.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/21.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/22.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/23.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">三星手机</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥250</span> <i class="item_price">￥245</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Mobile Phone3" /> 
+															<input type="hidden" name="amount" value="245.00"/>   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane fade" id="audio" aria-labelledby="audio-tab">
+											<div class="agile_ecommerce_tabs">
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/24.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/25.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/26.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/27.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/24.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/26.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">漫步者音响</a></h5>
+														<p><span>￥320</span> <i class="item_price">￥250</i></p>
+													<div class="simpleCart_shelfItem">
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Speakers" /> 
+															<input type="hidden" name="amount" value="250.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/28.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/29.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/30.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/31.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/32.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/30.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">森海塞尔</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥180</span> <i class="item_price">￥150</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Headphones" /> 
+															<input type="hidden" name="amount" value="150.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/36.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/33.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/34.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/35.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/33.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/34.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">JBL</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥220</span> <i class="item_price">￥180</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Audio Player" /> 
+															<input type="hidden" name="amount" value="180.00"/>   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane fade" id="video" aria-labelledby="video-tab">
+											<div class="agile_ecommerce_tabs">
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/37.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/38.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/39.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/40.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/38.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/39.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">Hp笔记本</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥880</span> <i class="item_price">￥850</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Laptop" /> 
+															<input type="hidden" name="amount" value="850.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/41.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/42.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/43.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/44.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/42.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/43.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">联想主机</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥290</span> <i class="item_price">￥280</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Notebook" /> 
+															<input type="hidden" name="amount" value="280.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/45.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/46.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/47.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/48.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/45.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/47.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">DELL一体机</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥120</span> <i class="item_price">￥80</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Kid's Toy" /> 
+															<input type="hidden" name="amount" value="80.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane fade" id="tv" aria-labelledby="tv-tab">
+											<div class="agile_ecommerce_tabs">
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/49.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/50.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/51.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/52.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/53.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/54.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/50.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">天梭TISSOT</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥950</span> <i class="item_price">￥820</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Refrigerator" /> 
+															<input type="hidden" name="amount" value="820.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/57.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/56.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/57.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/55.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/57.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/58.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/59.png" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h3><a href="/goToSingle">Apple Watch</a></h3>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥700</span> <i class="item_price">￥680</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="LED Tv"/> 
+															<input type="hidden" name="amount" value="680.00"/>   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/60.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/61.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/62.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/63.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/64.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/65.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/62.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/63.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">CASIO</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥520</span> <i class="item_price">￥510</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Washing Machine" /> 
+															<input type="hidden" name="amount" value="510.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane fade" id="kitchen" aria-labelledby="kitchen-tab">
+											<div class="agile_ecommerce_tabs">
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/66.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/67.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/68.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/69.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/70.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/71.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/67.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/69.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">Sony</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥460</span> <i class="item_price">￥1450</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Grinder" /> 
+															<input type="hidden" name="amount" value="450.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/72.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/73.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/74.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/75.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/76.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/77.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/78.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/73.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">Canon</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥390</span> <i class="item_price">￥350</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Water Purifier" /> 
+															<input type="hidden" name="amount" value="350.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="col-md-4 agile_ecommerce_tab_left">
+													<div class="hs-wrapper">
+														<img src="images/hotProducts/79.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/80.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/81.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/82.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/83.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/84.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/80.jpg" alt=" " class="img-responsive" />
+														<img src="images/hotProducts/81.jpg" alt=" " class="img-responsive" />
+														<div class="w3_hs_bottom">
+															<ul>
+																<li>
+																	<a href="#" data-toggle="modal" data-target="#myModal4"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<h5><a href="/goToSingle">小米</a></h5>
+													<div class="simpleCart_shelfItem">
+														<p><span>￥250</span> <i class="item_price">￥220</i></p>
+														<form action="#" method="post">
+															<input type="hidden" name="cmd" value="_cart" />
+															<input type="hidden" name="add" value="1" /> 
+															<input type="hidden" name="w3ls_item" value="Coffee Maker" /> 
+															<input type="hidden" name="amount" value="220.00" />   
+															<button type="submit" class="w3ls-cart">Add to cart</button>
+														</form>
+													</div>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+									</div>
+								</div> 
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<!-- //banner-bottom --> 
+
+					<!-- modal-video -->
+					<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/3.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>华为P20</h4>
+											<p>包装清单：
+												手机X1、快速指南X1、华为SuperCharge 充电器X1、三包凭证X1、Type-C 数字耳机X1、Type-C 数据线X1、取卡针X1、TPU保护壳X1、USB Type-C转3.5mm耳机转接线X1（备注：最终以实物为准）. </p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥380</span> <i class="item_price">￥350</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Mobile Phone1"> 
+													<input type="hidden" name="amount" value="350.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/9.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>Multimedia Home Accessories</h4>
+											<p>Ut enim ad minim veniam, quis nostrud 
+												exercitation ullamco laboris nisi ut aliquip ex ea 
+												commodo consequat.Duis aute irure dolor in 
+												reprehenderit in voluptate velit esse cillum dolore 
+												eu fugiat nulla pariatur. Excepteur sint occaecat 
+												cupidatat non proident, sunt in culpa qui officia 
+												deserunt mollit anim id est laborum.</p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥180</span> <i class="item_price">￥150</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Headphones"> 
+													<input type="hidden" name="amount" value="150.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="modal video-modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/11.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>Quad Core Colorful Laptop</h4>
+											<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in 
+												reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia  deserunt.</p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥880</span> <i class="item_price">￥850</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Laptop"> 
+													<input type="hidden" name="amount" value="850.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="modal video-modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal3">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/14.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>Cool Single Door Refrigerator </h4>
+											<p>Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore 
+												eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥950</span> <i class="item_price">￥820</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Mobile Phone1"> 
+													<input type="hidden" name="amount" value="820.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="modal video-modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModal4">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/17.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>New Model Mixer Grinder</h4>
+											<p>Excepteur sint occaecat laboris nisi ut aliquip ex ea 
+												commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+												eu fugiat nulla pariatur cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥460</span> <i class="item_price">￥450</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Mobile Phone1"> 
+													<input type="hidden" name="amount" value="450.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="modal video-modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModal5">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/36.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>Dry Vacuum Cleaner</h4>
+											<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+												commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+												cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥960</span> <i class="item_price">￥920</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Vacuum Cleaner"> 
+													<input type="hidden" name="amount" value="920.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="modal video-modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModal6">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+								</div>
+								<section>
+									<div class="modal-body">
+										<div class="col-md-5 modal_body_left">
+											<img src="images/hotProducts/37.jpg" alt=" " class="img-responsive" />
+										</div>
+										<div class="col-md-7 modal_body_right">
+											<h4>Kitchen & Dining Accessories</h4>
+											<p>Ut enim ad minim veniam, quis nostrud 
+												exercitation ullamco laboris nisi ut aliquip ex ea 
+												commodo consequat.Duis aute irure dolor in 
+												reprehenderit in voluptate velit esse cillum dolore 
+												eu fugiat nulla pariatur. Excepteur sint occaecat 
+												cupidatat non proident, sunt in culpa qui officia 
+												deserunt mollit anim id est laborum.</p>
+											<div class="rating">
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star-.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="rating-left">
+													<img src="images/star.png" alt=" " class="img-responsive" />
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="modal_body_right_cart simpleCart_shelfItem">
+												<p><span>￥280</span> <i class="item_price">￥250</i></p>
+												<form action="#" method="post">
+													<input type="hidden" name="cmd" value="_cart">
+													<input type="hidden" name="add" value="1"> 
+													<input type="hidden" name="w3ls_item" value="Induction Stove"> 
+													<input type="hidden" name="amount" value="250.00">   
+													<button type="submit" class="w3ls-cart">Add to cart</button>
+												</form>
+											</div>
+											<h5>Color</h5>
+											<div class="color-quality">
+												<ul>
+													<li><a href="#"><span></span></a></li>
+													<li><a href="#" class="brown"><span></span></a></li>
+													<li><a href="#" class="purple"><span></span></a></li>
+													<li><a href="#" class="gray"><span></span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<!-- //modal-video -->
+				</div>	
+			</div>
+			<!--结束布局-->
+			<!-- 新机专区 -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading"><h2>新机专区</h2></div>
+					<div class="products">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/new/2019010212191353070f14db9b730ba0ef1879e5f23c7bef95e_840_840.png" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">一加手机6T</a></h3></div>
+									<div class="price">￥3122</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/new/153fc7e521997b3b.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">小米（MI） 小米Play手机</a></h3></div>
+									<div class="price">￥1122</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/new/2a272e325cd36fa0.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">Meitu 美图V7(MP1801）</a></h3></div>
+									<div class="price">￥5122</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/new/9d2b78523e1bada3.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">三星 Galaxy A8s</a></h3></div>
+									<div class="price">￥3122</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 折扣专区 -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading"><h2>折扣专区</h2></div>
+					<div class="row">
+							<div class="banner">
+								<div class="col-sm-12">
+									<img src="images/discount/gz_diannao_1500x300._CB498118546_.jpg" />
+								</div>
+								<div class="col-sm-12">
+									<img src="images/discount/gz_game_1500x300._CB496918521_.jpg" />
+								</div>
+							</div>
+					</div>
+
+					<div class="products">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/discount/45602b8f08b313ec.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">OPPO R17</a></h3></div>
+									<div class="price">￥2798<span>￥3122</span></div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/discount/2361563781a99acb.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">Apple iPhone XR (A2108)</a></h3></div>
+									<div class="price">￥8998<span>￥10122</span></div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/discount/5bc831fdN61f8d9d2.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">vivo Z3</a></h3></div>
+									<div class="price">￥1698<span>￥2122</span></div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product">
+								<div class="image"><a href="/getProduct"><img src="images/discount/5b0fcab1N217bcf3d.jpg" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/getProduct">小米8</a></h3></div>
+									<div class="price">￥2298<span>￥2699</span></div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+					<div class="col-lg-12">
+						<div class="heading"><h2>品牌专区</h2></div>
+						<!-- top-brands -->
+						<div class="top-brands">
+								<div class="container">
+									<h3>Top Brands</h3>
+									<div class="sliderfig">
+										<ul id="flexiselDemo1">			
+											<li>
+												<a href="/goToContact">
+													<img src="images/brand/tb1.jpg" alt="Samsung" class="img-responsive" />
+												</a>
+												
+											</li>
+											<li>
+												<img src="images/brand/tb2.jpg" alt="CANON" class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/1086.jpg" alt="CASIO " class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/1813.jpg" alt="SONY " class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/1910.jpg" alt="MI " class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/1999.jpg" alt="PHILIPS" class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/1911.jpg" alt="VIVO " class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/tb3.jpg" alt="HP" class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/tb4.jpg" alt="CISCO" class="img-responsive" />
+											</li>
+											<li>
+												<img src="images/brand/tb5.jpg" alt="" class="img-responsive" />
+											</li>
+										</ul>
+									</div>
+									<script type="text/javascript">
+											$(window).load(function() {
+												$("#flexiselDemo1").flexisel({
+													visibleItems: 4,
+													animationSpeed: 1000,
+													autoPlay: true,
+													autoPlaySpeed: 3000,    		
+													pauseOnHover: true,
+													enableResponsiveBreakpoints: true,
+													responsiveBreakpoints: { 
+														portrait: { 
+															changePoint:480,
+															visibleItems: 1
+														}, 
+														landscape: { 
+															changePoint:640,
+															visibleItems:2
+														},
+														tablet: { 
+															changePoint:768,
+															visibleItems: 3
+														}
+													}
+												});
+												
+											});
+									</script>
+									<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+								</div>
+							</div>
+							<!-- //top-brands --> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="wrap-footer">
+				<div class="row">
+					<div class="col-md-3 col-footer footer-1">
+						<img src="images/logofooter.png" />
+						<p>本网站仅用于2018级天软毕业设计使用.</p>
+					</div>
+					<div class="col-md-3 col-footer footer-2">
+						<div class="heading"><h4>顾客服务</h4></div>
+						<ul>
+							<li><a href="#">关于我们</a></li>
+							<li><a href="#">开发者信息</a></li>
+							<li><a href="#">隐私</a></li>
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">联系我们</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-3">
+						<div class="heading"><h4>账户信息</h4></div>
+						<ul>
+							<li><a href="/goToAccount">我的账户</a></li>
+							<li><a href="#">订单查询</a></li>
+							<li><a href="#">我的收藏</a></li>
+							<li><a href="#">浏览记录</a></li>
+							<li><a href="#">我的优惠卷</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-4">
+						<div class="heading"><h4>联系我们</h4></div>
+						<ul>
+							<li><span class="glyphicon glyphicon-home"></span>地址：天津市西青区宾水西道399号</li>
+							<li><span class="glyphicon glyphicon-earphone"></span>+91 8866888111</li>
+							<li><span class="glyphicon glyphicon-envelope"></span>邮编：300387</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6" id="foot-center">
+						Copyright &copy; 2018. &nbsp;&nbsp;Pray版权所有.
+					</div>
+					<div class="col-md-6">
+						<div class="pull-right">
+							<ul>
+								<li><img src="images/visa-curved-32px.png" /></li>
+								<li><img src="images/paypal-curved-32px.png" /></li>
+								<li><img src="images/discover-curved-32px.png" /></li>
+								<li><img src="images/maestro-curved-32px.png" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+	
+	var user = sessionStorage.getItem("CURRENT_USER");
+	
+	</script>
+</body>
+</html>

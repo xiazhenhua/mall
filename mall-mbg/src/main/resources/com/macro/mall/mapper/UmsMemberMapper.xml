@@ -105,6 +105,19 @@
     from ums_member
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select 
+	    <include refid="Base_Column_List" />
+	    from ums_member
+	    where username = #{username,jdbcType=VARCHAR}
+  </select>
+  <select id="loginMember" resultMap="BaseResultMap">
+  	select 
+	    <include refid="Base_Column_List" />
+	    from ums_member
+	    where username = #{param1,jdbcType=VARCHAR} and password = #{param2,jdbcType=VARCHAR}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from ums_member
     where id = #{id,jdbcType=BIGINT}
