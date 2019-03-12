@@ -132,6 +132,10 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="getNewProductList" resultMap="BaseResultMap">
+  select  <include refid="Base_Column_List" />
+    from pms_product where new_status=1 order by id desc limit 4
+  </select>
   <select id="selectByExample" parameterType="com.macro.mall.model.PmsProductExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

@@ -15,7 +15,9 @@ public interface PmsProductMapper {
     int insert(PmsProduct record);
 
     int insertSelective(PmsProduct record);
-
+    //获取新品列表
+    List<PmsProduct> getNewProductList();
+    
     List<PmsProduct> selectByExampleWithBLOBs(PmsProductExample example);
 
     List<PmsProduct> selectByExample(PmsProductExample example);

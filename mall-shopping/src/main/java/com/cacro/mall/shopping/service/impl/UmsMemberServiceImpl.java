@@ -9,7 +9,6 @@ import com.cacro.mall.shopping.service.IUmsMemberService;
 import com.cacro.mall.shopping.util.MD5Util;
 import com.macro.mall.mapper.UmsMemberMapper;
 import com.macro.mall.model.UmsMember;
-import com.mysql.fabric.xmlrpc.base.Member;
 
 @Service
 public class UmsMemberServiceImpl implements IUmsMemberService{
