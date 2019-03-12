@@ -130,7 +130,7 @@ header .form-search button:hover {color: #eee;}
 /* ---Product--- */
 .products {text-align: center;}
 .products:after, .products:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
-.products .product{margin-bottom: 50px;}
+.products .product{margin-bottom: 50px; height: 370px}
 
 .product {}
 .product:after, .product:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
