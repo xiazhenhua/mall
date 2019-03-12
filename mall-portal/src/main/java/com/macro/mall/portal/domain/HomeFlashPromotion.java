@@ -17,6 +17,7 @@ public class HomeFlashPromotion {
     private Date endTime;
     private Date nextStartTime;
     private Date nextEndTime;
+    
     //属于该秒杀活动的商品
     private List<FlashPromotionProduct> productList;
 }

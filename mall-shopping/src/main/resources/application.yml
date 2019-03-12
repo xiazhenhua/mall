@@ -34,8 +34,8 @@ mybatis:
     cache-enabled: true
   mapper-locations:
   - classpath:com/isoft/shopping/mapper/*.xml
-  type-handlers-package: com.cacro.mall.shopping.entity
-  type-aliases-package: com.cacro.mall.shopping.entity
+  type-handlers-package: com.cacro.mall.shopping.model
+  type-aliases-package: com.cacro.mall.shopping.model
   
 #开启myBatis的调试功能
 logging:

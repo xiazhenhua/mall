@@ -192,6 +192,17 @@
 		<include refid="Base_Column_List" />
 		from pms_product where new_status=1 order by id desc limit 4
 	</select>
+	<select id="getAllProductCount" resultType="java.lang.Integer">
+		select count(*)
+			from pms_product;
+	</select>
+	
+	<select id="getProductCategory" resultMap="BaseResultMap">
+	select 
+	<include refid="Base_Column_List" />
+		from pms_product
+	limit #{nextStartPage,jdbcType=INTEGER},#{v_pageSize,jdbcType=INTEGER}
+	</select>
 	<select id="getDiscountProductList"
 		resultMap="ResultMapDiscount">
 		select d.product_id,d.count,d.discount,d.price as

@@ -21,6 +21,11 @@ public interface PmsProductMapper {
     List<PmsProduct> getNewProductList();
     //获取折扣商品列表
     List<PmsProductLadderVO> getDiscountProductList();
+    //获取所有商品数量
+    int getAllProductCount();
+    //获取详细商品信息
+    List<PmsProduct> getProductCategory(@Param("nextStartPage")int nextStartPage,@Param("v_pageSize") int v_pageSize);
+    
     
     List<PmsProduct> selectByExampleWithBLOBs(PmsProductExample example);
 
