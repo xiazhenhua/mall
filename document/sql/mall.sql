@@ -11,7 +11,7 @@
  Target Server Version : 80013
  File Encoding         : 65001
 
- Date: 08/03/2019 16:42:10
+ Date: 12/03/2019 17:17:15
 */
 
 SET NAMES utf8mb4;
@@ -74,7 +74,7 @@ CREATE TABLE `cms_prefrence_area`  (
   `sort` int(11) NULL DEFAULT NULL,
   `show_status` int(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '优选专区' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '优选专区' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of cms_prefrence_area
@@ -93,7 +93,7 @@ CREATE TABLE `cms_prefrence_area_product_relation`  (
   `prefrence_area_id` bigint(20) NULL DEFAULT NULL,
   `product_id` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '优选专区和产品关系表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '优选专区和产品关系表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of cms_prefrence_area_product_relation
@@ -200,7 +200,7 @@ CREATE TABLE `cms_subject_product_relation`  (
   `subject_id` bigint(20) NULL DEFAULT NULL,
   `product_id` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '专题商品关系表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '专题商品关系表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of cms_subject_product_relation
@@ -379,7 +379,7 @@ CREATE TABLE `oms_order`  (
   `comment_time` datetime(0) NULL DEFAULT NULL COMMENT '评价时间',
   `modify_time` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_order
@@ -430,7 +430,7 @@ CREATE TABLE `oms_order_item`  (
   `gift_growth` int(11) NULL DEFAULT 0,
   `product_attr` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品销售属性:[{\"key\":\"颜色\",\"value\":\"颜色\"},{\"key\":\"容量\",\"value\":\"4G\"}]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 45 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单中所包含的商品' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单中所包含的商品' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_order_item
@@ -596,7 +596,7 @@ CREATE TABLE `oms_order_setting`  (
   `finish_overtime` int(11) NULL DEFAULT NULL COMMENT '自动完成交易时间，不能申请售后（天）',
   `comment_overtime` int(11) NULL DEFAULT NULL COMMENT '订单完成后自动好评时间（天）',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单设置表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单设置表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oms_order_setting
@@ -645,31 +645,31 @@ CREATE TABLE `pms_brand`  (
   `big_pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '专区大图',
   `brand_story` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '品牌故事',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '品牌表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '品牌表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_brand
 -- ----------------------------
-INSERT INTO `pms_brand` VALUES (1, '万和', 'W', 0, 1, 1, 100, 100, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg(5).jpg', '', 'Victoria\'s Secret的故事');
-INSERT INTO `pms_brand` VALUES (2, '三星', 'S', 100, 1, 1, 100, 100, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg (1).jpg', NULL, '三星的故事');
+INSERT INTO `pms_brand` VALUES (1, '思科', 'S', 0, 1, 1, 100, 100, 'https://e-mall.oss-cn-beijing.aliyuncs.com/brand/tb4.jpg', '', 'Victoria\'s Secret的故事');
+INSERT INTO `pms_brand` VALUES (2, '三星', 'S', 100, 1, 1, 100, 100, 'https://e-mall.oss-cn-beijing.aliyuncs.com/brand/tb1.jpg', NULL, '三星的故事');
 INSERT INTO `pms_brand` VALUES (3, '华为', 'H', 100, 1, 1, 100, 100, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/17f2dd9756d9d333bee8e60ce8c03e4c_222_222.jpg', NULL, 'Victoria\'s Secret的故事');
 INSERT INTO `pms_brand` VALUES (4, '格力', 'G', 30, 1, 1, 100, 100, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/dc794e7e74121272bbe3ce9bc41ec8c3_222_222.jpg', NULL, 'Victoria\'s Secret的故事');
 INSERT INTO `pms_brand` VALUES (5, '方太', 'F', 20, 1, 1, 100, 100, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg (4).jpg', NULL, 'Victoria\'s Secret的故事');
-INSERT INTO `pms_brand` VALUES (6, '小米', 'M', 500, 1, 1, 100, 100, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/1e34aef2a409119018a4c6258e39ecfb_222_222.png', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180518/5afd7778Nf7800b75.jpg', '小米手机的故事');
+INSERT INTO `pms_brand` VALUES (6, '小米', 'M', 500, 1, 1, 100, 100, 'http://e-mall.oss-cn-beijing.aliyuncs.com/brand/1910.jpg', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180518/5afd7778Nf7800b75.jpg', '小米手机的故事');
 INSERT INTO `pms_brand` VALUES (21, 'OPPO', 'O', 0, 1, 1, 88, 500, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg(6).jpg', '', 'string');
 INSERT INTO `pms_brand` VALUES (51, '苹果', 'A', 200, 1, 1, 55, 200, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg.jpg', NULL, '苹果的故事');
-INSERT INTO `pms_brand` VALUES (59, '索尼', 'S', 10, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190307/14f6b1abdbf89a3c.jpg', '', '索尼的故事');
+INSERT INTO `pms_brand` VALUES (59, '索尼', 'S', 10, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/brand/1813.jpg', '', '索尼的故事');
 INSERT INTO `pms_brand` VALUES (60, '荣耀', 'R', 0, 0, 0, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/d2ac6df050ae45a7.jpg', '', '');
 INSERT INTO `pms_brand` VALUES (61, '荣耀', 'R', 2, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg.jpg', '', '');
-INSERT INTO `pms_brand` VALUES (62, '卡西欧', 'K', 99, 1, 0, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (8).jpg', '', '卡西欧的故事');
+INSERT INTO `pms_brand` VALUES (62, '卡西欧', 'K', 99, 1, 0, NULL, NULL, 'https://e-mall.oss-cn-beijing.aliyuncs.com/brand/1086.jpg', '', '卡西欧的故事');
 INSERT INTO `pms_brand` VALUES (63, '一加', 'Y', 18, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (12).jpg', '', '');
-INSERT INTO `pms_brand` VALUES (64, 'VIVO', 'V', 0, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/u=1456813268,3381107227&fm=26&gp=0.jpg', '', '');
+INSERT INTO `pms_brand` VALUES (64, 'VIVO', 'V', 0, 1, 1, NULL, NULL, 'https://e-mall.oss-cn-beijing.aliyuncs.com/brand/1911.jpg', '', '');
 INSERT INTO `pms_brand` VALUES (65, '联想', 'L', 14, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/u=3970647028,1054849191&fm=26&gp=0.jpg', '', '联想专区特卖');
 INSERT INTO `pms_brand` VALUES (66, '戴尔', 'D', 33, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (5).jpg', '', '');
 INSERT INTO `pms_brand` VALUES (67, 'LG', 'L', 0, 0, 0, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (6).jpg', '', '');
-INSERT INTO `pms_brand` VALUES (68, '佳能', 'J', 34, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (9).jpg', '', '');
+INSERT INTO `pms_brand` VALUES (68, '佳能', 'J', 34, 1, 1, NULL, NULL, 'https://e-mall.oss-cn-beijing.aliyuncs.com/brand/tb2.jpg', '', '');
 INSERT INTO `pms_brand` VALUES (69, 'BOSE', 'B', 23, 1, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (1).jpg', '', '');
-INSERT INTO `pms_brand` VALUES (70, '惠普', 'H', 5, 0, 1, NULL, NULL, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (4).jpg', '', '');
+INSERT INTO `pms_brand` VALUES (70, '惠普', 'H', 5, 0, 1, NULL, NULL, 'https://e-mall.oss-cn-beijing.aliyuncs.com/brand/tb3.jpg', '', '');
 
 -- ----------------------------
 -- Table structure for pms_comment
@@ -736,7 +736,7 @@ CREATE TABLE `pms_member_price`  (
   `member_price` decimal(10, 2) NULL DEFAULT NULL COMMENT '会员价格',
   `member_level_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 203 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品会员价格表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 210 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品会员价格表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_member_price
@@ -797,6 +797,9 @@ INSERT INTO `pms_member_price` VALUES (203, 26, 3, NULL, '钻石会员');
 INSERT INTO `pms_member_price` VALUES (204, 37, 1, NULL, '黄金会员');
 INSERT INTO `pms_member_price` VALUES (205, 37, 2, NULL, '白金会员');
 INSERT INTO `pms_member_price` VALUES (206, 37, 3, NULL, '钻石会员');
+INSERT INTO `pms_member_price` VALUES (207, 38, 1, NULL, '黄金会员');
+INSERT INTO `pms_member_price` VALUES (208, 38, 2, NULL, '白金会员');
+INSERT INTO `pms_member_price` VALUES (209, 38, 3, NULL, '钻石会员');
 
 -- ----------------------------
 -- Table structure for pms_product
@@ -846,41 +849,19 @@ CREATE TABLE `pms_product`  (
   `brand_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '品牌名称',
   `product_category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品分类名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品信息' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品信息' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product
 -- ----------------------------
-INSERT INTO `pms_product` VALUES (1, 49, 7, 0, 0, '银色星芒刺绣网纱底裤', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 1, 1, 1, 1, 100, 0, 100.00, NULL, 0, 100, NULL, '111', '111', 120.00, 100, 20, '件', 1000.00, 0, NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', NULL, NULL, NULL, 0, '七匹狼', '外套');
-INSERT INTO `pms_product` VALUES (2, 49, 7, 0, 0, '银色星芒刺绣网纱底裤2', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86578', 1, 1, 1, 1, 1, 1, 0, 100.00, NULL, 0, 100, NULL, '111', '111', 120.00, 100, 20, '件', 1000.00, 0, NULL, '银色星芒刺绣网纱底裤2', '银色星芒刺绣网纱底裤', NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '<p>银色星芒刺绣网纱底裤</p>', '<p>银色星芒刺绣网纱底裤</p>', NULL, NULL, NULL, 0, '七匹狼', '外套');
-INSERT INTO `pms_product` VALUES (3, 1, 7, 0, 0, '银色星芒刺绣网纱底裤3', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86579', 1, 1, 1, 1, 1, 1, 0, 100.00, NULL, 0, 100, NULL, '111', '111', 120.00, 100, 20, '件', 1000.00, 0, NULL, '银色星芒刺绣网纱底裤3', '银色星芒刺绣网纱底裤', NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', NULL, NULL, NULL, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (4, 1, 7, 0, 0, '银色星芒刺绣网纱底裤4', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86580', 1, 1, 1, 1, 1, 1, 0, 100.00, NULL, 0, 100, NULL, '111', '111', 120.00, 100, 20, '件', 1000.00, 0, NULL, '银色星芒刺绣网纱底裤4', '银色星芒刺绣网纱底裤', NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', NULL, NULL, NULL, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (5, 1, 7, 0, 0, '银色星芒刺绣网纱底裤5', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86581', 1, 0, 1, 1, 1, 1, 0, 100.00, NULL, 0, 100, NULL, '111', '111', 120.00, 100, 20, '件', 1000.00, 0, NULL, '银色星芒刺绣网纱底裤5', '银色星芒刺绣网纱底裤', NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', NULL, NULL, NULL, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (6, 1, 7, 0, 0, '银色星芒刺绣网纱底裤6', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86582', 1, 1, 1, 1, 1, 1, 0, 100.00, NULL, 0, 100, NULL, '111', '111', 120.00, 100, 20, '件', 1000.00, 0, NULL, '银色星芒刺绣网纱底裤6', '银色星芒刺绣网纱底裤', NULL, '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', '银色星芒刺绣网纱底裤', NULL, NULL, NULL, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (7, 1, 7, 0, 1, '女式超柔软拉毛运动开衫', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 0, 0, 0, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (8, 1, 7, 0, 1, '女式超柔软拉毛运动开衫1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 0, 0, 0, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (9, 1, 7, 0, 1, '女式超柔软拉毛运动开衫1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 0, 0, 0, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (10, 1, 7, 0, 1, '女式超柔软拉毛运动开衫1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 0, 0, 0, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (11, 1, 7, 0, 1, '女式超柔软拉毛运动开衫1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 1, 0, 1, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (12, 1, 7, 0, 1, '女式超柔软拉毛运动开衫2', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 1, 0, 1, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (13, 1, 7, 0, 1, '女式超柔软拉毛运动开衫3', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 1, 0, 1, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (14, 1, 7, 0, 1, '女式超柔软拉毛运动开衫3', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 0, 0, 1, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (18, 1, 7, 0, 1, '女式超柔软拉毛运动开衫3', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180522/web.png', 'No86577', 1, 0, 0, 1, 0, 0, 0, 249.00, 0.00, 0, 100, 0, '匠心剪裁，垂感质地', '匠心剪裁，垂感质地', 299.00, 100, 0, '件', 0.00, 0, 'string', '女式超柔软拉毛运动开衫', 'string', 'string', 'string', 'string', 'string', 'string', '2018-04-26 10:41:03', '2018-04-26 10:41:03', 0, 0, '万和', '外套');
-INSERT INTO `pms_product` VALUES (22, 6, 7, 0, 1, 'test', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg', '', 1, 1, 0, 0, 0, 0, 0, 0.00, NULL, 0, 0, 0, 'test', '', 0.00, 100, 0, '', 0.00, 1, '1,2', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '小米', '外套');
-INSERT INTO `pms_product` VALUES (23, 6, 19, 0, 1, '毛衫测试', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg', 'NO.1098', 1, 1, 1, 1, 0, 0, 0, 99.00, NULL, 99, 99, 1000, '毛衫测试11', 'xxx', 109.00, 100, 0, '件', 1000.00, 1, '1,2,3', '毛衫测试', '毛衫测试', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg,http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg', '毛衫测试', '毛衫测试', '<p><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/155x54.bmp\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/APP登录bg1080.jpg\" width=\"500\" height=\"500\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/APP登录界面.jpg\" width=\"500\" height=\"500\" /></p>', '', NULL, NULL, 0, 2, '小米', '手机通讯');
-INSERT INTO `pms_product` VALUES (24, 6, 7, 0, NULL, 'xxx', '', '', 1, 0, 0, 0, 0, 0, 0, 0.00, NULL, 0, 0, 0, 'xxx', '', 0.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '小米', '外套');
 INSERT INTO `pms_product` VALUES (26, 3, 19, 0, 3, '华为 HUAWEI P20 ', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '6946605', 0, 1, 1, 1, 0, 100, 0, 3788.00, NULL, 3788, 3788, 0, 'AI智慧全面屏 6GB +64GB 亮黑色 全网通版 移动联通电信4G手机 双卡双待手机 双卡双待', '', 4288.00, 1000, 0, '件', 0.00, 1, '2,3,1', '', '', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ab46a3cN616bdc41.jpg,http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf5fN2522b9dc.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ad44f1cNf51f3bb0.jpg\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ad44fa8Nfcf71c10.jpg\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ad44fa9N40e78ee0.jpg\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ad457f4N1c94bdda.jpg\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ad457f5Nd30de41d.jpg\" /><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5b10fb0eN0eb053fb.jpg\" /></p>', '', NULL, NULL, 0, 1, '华为', '手机通讯');
-INSERT INTO `pms_product` VALUES (27, 6, 19, 0, 3, '小米8 全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '7437788', 0, 1, 1, 1, 0, 0, 0, 2699.00, NULL, 2699, 2699, 0, '骁龙845处理器，红外人脸解锁，AI变焦双摄，AI语音助手小米6X低至1299，点击抢购', '小米8 全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待', 2699.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '<p><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b2254e8N414e6d3a.jpg\" width=\"500\" /></p>', '', NULL, NULL, 0, 3, '小米', '手机通讯');
-INSERT INTO `pms_product` VALUES (28, 6, 19, 0, 3, '小米 红米5A 全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '7437789', 0, 1, 1, 1, 0, 0, 0, 649.00, NULL, 649, 649, 0, '8天超长待机，137g轻巧机身，高通骁龙处理器小米6X低至1299，点击抢购', '', 649.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 4, '小米', '手机通讯');
-INSERT INTO `pms_product` VALUES (29, 51, 19, 0, 3, 'Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', '7437799', 0, 1, 1, 0, 0, 0, 0, 5499.00, NULL, 5499, 5499, 0, '【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。', '', 5499.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '苹果', '手机通讯');
-INSERT INTO `pms_product` VALUES (30, 50, 8, 0, 1, 'HLA海澜之家简约动物印花短袖T恤', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5ad83a4fN6ff67ecd.jpg!cc_350x449.jpg', 'HNTBJ2E042A', 1, 1, 1, 1, 0, 0, 0, 98.00, NULL, 0, 0, 0, '2018夏季新品微弹舒适新款短T男生 6月6日-6月20日，满300减30，参与互动赢百元礼券，立即分享赢大奖', '', 98.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '海澜之家', 'T恤');
-INSERT INTO `pms_product` VALUES (31, 50, 8, 0, 1, 'HLA海澜之家蓝灰花纹圆领针织布短袖T恤', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5ac98b64N70acd82f.jpg!cc_350x449.jpg', 'HNTBJ2E080A', 1, 1, 0, 0, 0, 0, 0, 98.00, NULL, 0, 0, 0, '2018夏季新品短袖T恤男HNTBJ2E080A 蓝灰花纹80 175/92A/L80A 蓝灰花纹80 175/92A/L', '', 98.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '海澜之家', 'T恤');
-INSERT INTO `pms_product` VALUES (32, 50, 8, 0, NULL, 'HLA海澜之家短袖T恤男基础款', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a51eb88Na4797877.jpg', 'HNTBJ2E153A', 1, 1, 0, 0, 0, 0, 0, 68.00, NULL, 0, 0, 0, 'HLA海澜之家短袖T恤男基础款简约圆领HNTBJ2E153A藏青(F3)175/92A(50)', '', 68.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '海澜之家', 'T恤');
-INSERT INTO `pms_product` VALUES (33, 6, 35, 0, NULL, '小米（MI）小米电视4A ', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b02804dN66004d73.jpg', '4609652', 0, 1, 0, 0, 0, 0, 0, 2499.00, NULL, 0, 0, 0, '小米（MI）小米电视4A 55英寸 L55M5-AZ/L55M5-AD 2GB+8GB HDR 4K超高清 人工智能网络液晶平板电视', '', 2499.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '小米', '手机数码');
+INSERT INTO `pms_product` VALUES (27, 6, 19, 0, 3, '小米8 全面屏智能手机', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '7437788', 0, 1, 1, 1, 0, 0, 0, 2699.00, NULL, 2699, 2699, 0, '骁龙845处理器，红外人脸解锁，AI变焦双摄，AI语音助手小米6X低至1299，点击抢购', '小米8 全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待', 2699.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '<p><img class=\"wscnph\" src=\"http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b2254e8N414e6d3a.jpg\" width=\"500\" /></p>', '', NULL, NULL, 0, 3, '小米', '手机通讯');
+INSERT INTO `pms_product` VALUES (28, 6, 19, 0, 3, '小米 红米5A 全网通版', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '7437789', 0, 1, 1, 1, 0, 0, 0, 649.00, NULL, 649, 649, 0, '8天超长待机，137g轻巧机身，高通骁龙处理器小米6X低至1299，点击抢购', '', 649.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 4, '小米', '手机通讯');
+INSERT INTO `pms_product` VALUES (29, 51, 19, 0, 3, 'Apple iPhone 8 Plus 64GB', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg', '7437799', 0, 1, 1, 0, 0, 0, 0, 5499.00, NULL, 5499, 5499, 0, '【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。', '', 5499.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '苹果', '手机通讯');
 INSERT INTO `pms_product` VALUES (34, 6, 35, 0, NULL, '小米（MI）小米电视4A 65英寸', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b028530N51eee7d4.jpg', '4609660', 0, 0, 0, 0, 0, 0, 0, 3999.00, NULL, 0, 0, 0, ' L65M5-AZ/L65M5-AD 2GB+8GB HDR 4K超高清 人工智能网络液晶平板电视', '', 3999.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '小米', '手机数码');
-INSERT INTO `pms_product` VALUES (35, 58, 29, 0, NULL, '耐克NIKE 男子 休闲鞋 ROSHE RUN 运动鞋 511881-010黑色41码', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b235bb9Nf606460b.jpg', '6799342', 1, 1, 0, 0, 0, 0, 0, 369.00, NULL, 0, 0, 0, '耐克NIKE 男子 休闲鞋 ROSHE RUN 运动鞋 511881-010黑色41码', '', 369.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, 'NIKE', '男鞋');
-INSERT INTO `pms_product` VALUES (36, 58, 29, 0, NULL, '耐克NIKE 男子 气垫 休闲鞋 AIR MAX 90 ESSENTIAL 运动鞋 AJ1285-101白色41码', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b19403eN9f0b3cb8.jpg', '6799345', 1, 1, 1, 1, 0, 0, 0, 499.00, NULL, 0, 0, 0, '耐克NIKE 男子 气垫 休闲鞋 AIR MAX 90 ESSENTIAL 运动鞋 AJ1285-101白色41码', '', 499.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, 'NIKE', '男鞋');
+INSERT INTO `pms_product` VALUES (36, 58, 29, 0, NULL, '一加6T', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/1879e5f23c7bef95e_840_840.png', '6799345', 1, 1, 1, 1, 0, 0, 0, 3599.00, NULL, 0, 0, 0, '一加智能手机', '', 3999.00, 100, 0, '', 0.00, 0, '', '', '', '', '', '', '', '', NULL, NULL, 0, 0, '一加', '影音娱乐');
 INSERT INTO `pms_product` VALUES (37, 6, 55, 0, 11, '小米互联网电视', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/5be66a11Nb72df941.jpg', '99', 0, 1, 1, 0, 0, 18, 0, 3699.00, NULL, 11, 100, 0, '小米电视4A 65英寸 L65M5-AZ/L65M5-AD 2GB+8GB HDR 4K超高清 人工智能网络液晶平板电视', '小米电视4A 65英寸 L65M5-AZ/L65M5-AD 2GB+8GB HDR 4K超高清 人工智能网络液晶平板电视', 3999.00, 100, 0, '人民币', 5670.00, 1, '1,2,3', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/58da139bN24acdd50.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/c10bc8d0320378cb.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/5be66a11Nb72df941.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/58da139bN24acdd50.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/c10bc8d0320378cb.jpg\" /></p>', '', NULL, NULL, 0, 0, '小米', '');
+INSERT INTO `pms_product` VALUES (38, 2, 32, 0, 6, '三星S10', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/4d23a004ab9ecdda.jpg', '8889', 0, 1, 1, 0, 0, 199, 0, 10999.00, NULL, 0, 0, 0, '3D超声波屏下指纹超感官全视屏骁龙855双卡双待全网通', '', 10999.00, 1000, 0, '人民币', 2100.00, 1, '', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/75e157ed82cddff5.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/7abac18ca0e45f30.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/f29e27f46bc990e1.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/75e157ed82cddff5.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/4d23a004ab9ecdda.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/7abac18ca0e45f30.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/f29e27f46bc990e1.jpg\" /></p>', '', NULL, NULL, 0, 0, '三星', '影音娱乐');
 
 -- ----------------------------
 -- Table structure for pms_product_attribute
@@ -900,7 +881,7 @@ CREATE TABLE `pms_product_attribute`  (
   `hand_add_status` int(1) NULL DEFAULT NULL COMMENT '是否支持手动新增；0->不支持；1->支持',
   `type` int(1) NULL DEFAULT NULL COMMENT '属性的类型；0->规格；1->参数',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品属性参数表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 75 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品属性参数表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_attribute
@@ -970,7 +951,7 @@ CREATE TABLE `pms_product_attribute_category`  (
   `attribute_count` int(11) NULL DEFAULT 0 COMMENT '属性数量',
   `param_count` int(11) NULL DEFAULT 0 COMMENT '参数数量',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品属性分类表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品属性分类表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_attribute_category
@@ -989,7 +970,7 @@ CREATE TABLE `pms_product_attribute_value`  (
   `product_attribute_id` bigint(20) NULL DEFAULT NULL,
   `value` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '手动添加规格或参数的值，参数单值，规格有多个时以逗号隔开',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 232 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '存储产品参数信息的表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 249 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '存储产品参数信息的表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_attribute_value
@@ -1079,6 +1060,7 @@ INSERT INTO `pms_product_attribute_value` VALUES (244, 37, 66, NULL);
 INSERT INTO `pms_product_attribute_value` VALUES (245, 37, 57, NULL);
 INSERT INTO `pms_product_attribute_value` VALUES (246, 37, 58, NULL);
 INSERT INTO `pms_product_attribute_value` VALUES (247, 37, 61, NULL);
+INSERT INTO `pms_product_attribute_value` VALUES (248, 38, 49, '碳晶黑');
 
 -- ----------------------------
 -- Table structure for pms_product_category
@@ -1098,7 +1080,7 @@ CREATE TABLE `pms_product_category`  (
   `keywords` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品分类' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品分类' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_category
@@ -1142,7 +1124,7 @@ CREATE TABLE `pms_product_category_attribute_relation`  (
   `product_category_id` bigint(20) NULL DEFAULT NULL,
   `product_attribute_id` bigint(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_category_attribute_relation
@@ -1169,7 +1151,7 @@ CREATE TABLE `pms_product_full_reduction`  (
   `full_price` decimal(10, 2) NULL DEFAULT NULL,
   `reduce_price` decimal(10, 2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品满减表(只针对同商品)' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 66 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品满减表(只针对同商品)' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_full_reduction
@@ -1201,6 +1183,7 @@ INSERT INTO `pms_product_full_reduction` VALUES (61, 28, 1000.00, 120.00);
 INSERT INTO `pms_product_full_reduction` VALUES (62, 29, 0.00, 0.00);
 INSERT INTO `pms_product_full_reduction` VALUES (63, 26, 0.00, 0.00);
 INSERT INTO `pms_product_full_reduction` VALUES (64, 37, 0.00, 0.00);
+INSERT INTO `pms_product_full_reduction` VALUES (65, 38, 0.00, 0.00);
 
 -- ----------------------------
 -- Table structure for pms_product_ladder
@@ -1213,38 +1196,18 @@ CREATE TABLE `pms_product_ladder`  (
   `discount` decimal(10, 2) NULL DEFAULT NULL COMMENT '折扣',
   `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '折后价格',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 68 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品阶梯价格表(只针对同商品)' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 71 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '产品阶梯价格表(只针对同商品)' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_product_ladder
 -- ----------------------------
-INSERT INTO `pms_product_ladder` VALUES (1, 7, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (2, 8, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (3, 9, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (4, 10, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (5, 11, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (6, 12, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (7, 13, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (8, 14, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (12, 18, 3, 0.70, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (14, 7, 4, 0.60, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (15, 7, 5, 0.50, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (18, 22, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (20, 24, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (38, 23, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (48, 31, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (50, 32, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (52, 33, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (57, 36, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (58, 35, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (59, 34, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (60, 30, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (64, 27, 2, 0.80, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (65, 27, 3, 0.75, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (66, 28, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (67, 29, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (68, 26, 0, 0.00, 0.00);
-INSERT INTO `pms_product_ladder` VALUES (69, 37, 0, 0.00, 0.00);
+INSERT INTO `pms_product_ladder` VALUES (1, 26, 3, 0.70, 2651.60);
+INSERT INTO `pms_product_ladder` VALUES (2, 27, 3, 0.70, 1890.00);
+INSERT INTO `pms_product_ladder` VALUES (3, 28, 3, 0.90, 585.00);
+INSERT INTO `pms_product_ladder` VALUES (4, 29, 3, 0.60, 3300.00);
+INSERT INTO `pms_product_ladder` VALUES (5, 34, 3, 0.85, 3400.00);
+INSERT INTO `pms_product_ladder` VALUES (6, 36, 3, 0.90, 3240.00);
+INSERT INTO `pms_product_ladder` VALUES (70, 37, 100, 0.80, 2960.00);
 
 -- ----------------------------
 -- Table structure for pms_product_operate_log
@@ -1305,7 +1268,7 @@ CREATE TABLE `pms_sku_stock`  (
   `promotion_price` decimal(10, 2) NULL DEFAULT NULL COMMENT '单品促销价格',
   `lock_stock` int(11) NULL DEFAULT 0 COMMENT '锁定库存',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 113 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'sku的库存' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 115 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'sku的库存' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pms_sku_stock
@@ -1485,7 +1448,7 @@ CREATE TABLE `sms_flash_promotion`  (
   `status` int(1) NULL DEFAULT NULL COMMENT '上下线状态',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '秒杀时间段名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '限时购表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '限时购表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sms_flash_promotion
@@ -1750,7 +1713,7 @@ CREATE TABLE `ums_admin`  (
 -- Records of ums_admin
 -- ----------------------------
 INSERT INTO `ums_admin` VALUES (1, 'test', '202cb962ac59075b964b07152d234b70', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg.jpg', NULL, '测试账号', NULL, '2018-09-29 13:55:30', '2018-09-29 13:55:39', 1);
-INSERT INTO `ums_admin` VALUES (3, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/170157_yIl3_1767531.jpg', 'admin@163.com', '系统管理员', '系统管理员', '2018-10-08 13:32:47', '2019-03-08 15:24:18', 1);
+INSERT INTO `ums_admin` VALUES (3, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/170157_yIl3_1767531.jpg', 'admin@163.com', '系统管理员', '系统管理员', '2018-10-08 13:32:47', '2019-03-12 09:54:24', 1);
 
 -- ----------------------------
 -- Table structure for ums_admin_login_log
@@ -1764,7 +1727,7 @@ CREATE TABLE `ums_admin_login_log`  (
   `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `user_agent` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '浏览器登录类型',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台用户登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of ums_admin_login_log
@@ -1797,6 +1760,8 @@ INSERT INTO `ums_admin_login_log` VALUES (29, 3, '2019-03-08 08:27:01', '0:0:0:0
 INSERT INTO `ums_admin_login_log` VALUES (30, 3, '2019-03-08 08:55:59', '0:0:0:0:0:0:0:1', NULL, NULL);
 INSERT INTO `ums_admin_login_log` VALUES (31, 3, '2019-03-08 13:24:41', '0:0:0:0:0:0:0:1', NULL, NULL);
 INSERT INTO `ums_admin_login_log` VALUES (32, 3, '2019-03-08 15:24:19', '0:0:0:0:0:0:0:1', NULL, NULL);
+INSERT INTO `ums_admin_login_log` VALUES (33, 3, '2019-03-12 09:44:24', '0:0:0:0:0:0:0:1', NULL, NULL);
+INSERT INTO `ums_admin_login_log` VALUES (34, 3, '2019-03-12 09:54:25', '0:0:0:0:0:0:0:1', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for ums_admin_permission_relation
@@ -1911,18 +1876,19 @@ CREATE TABLE `ums_member`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `idx_username`(`username`) USING BTREE,
   UNIQUE INDEX `idx_phone`(`phone`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会员表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会员表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of ums_member
 -- ----------------------------
-INSERT INTO `ums_member` VALUES (3, 4, 'windy', 'e10adc3949ba59abbe56e057f20f883e', 'windy', '18061581848', 1, '2018-08-03 16:46:38', NULL, 0, '2019-03-11', '天津', '程序猿', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `ums_member` VALUES (4, 4, 'zhengsan', 'e10adc3949ba59abbe56e057f20f883e', 'zhengsan', '18061581847', 1, '2018-11-12 14:12:04', NULL, 0, '2019-03-18', '北京', '公务员', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `ums_member` VALUES (5, 4, 'lisi', 'e10adc3949ba59abbe56e057f20f883e', 'lisi', '18061581841', 1, '2018-11-12 14:12:38', NULL, 0, '2019-03-18', '上海', '项目经理', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `ums_member` VALUES (6, 4, 'wangwu', 'e10adc3949ba59abbe56e057f20f883e', 'wangwu', '18061581842', 1, '2018-11-12 14:13:09', NULL, 1, '2019-03-17', '济南', '人事主管', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `ums_member` VALUES (7, 4, 'lion', 'e10adc3949ba59abbe56e057f20f883e', 'lion', '18061581845', 1, '2018-11-12 14:21:39', NULL, 1, '2019-03-17', '青岛', '项目组长', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `ums_member` VALUES (3, 4, 'windy', 'E10ADC3949BA59ABBE56E057F20F883E', 'windy', '18061581848', 1, '2018-08-03 16:46:38', NULL, 0, '2019-03-11', '天津', '程序猿', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `ums_member` VALUES (4, 4, 'zhengsan', 'E10ADC3949BA59ABBE56E057F20F883E', 'zhengsan', '18061581847', 1, '2018-11-12 14:12:04', NULL, 0, '2019-03-18', '北京', '公务员', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `ums_member` VALUES (5, 4, 'lisi', 'E10ADC3949BA59ABBE56E057F20F883E', 'lisi', '18061581841', 1, '2018-11-12 14:12:38', NULL, 0, '2019-03-18', '上海', '项目经理', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `ums_member` VALUES (6, 4, 'wangwu', 'E10ADC3949BA59ABBE56E057F20F883E', 'wangwu', '18061581842', 1, '2018-11-12 14:13:09', NULL, 1, '2019-03-17', '济南', '人事主管', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `ums_member` VALUES (7, 4, 'lion', 'E10ADC3949BA59ABBE56E057F20F883E', 'lion', '18061581845', 1, '2018-11-12 14:21:39', NULL, 1, '2019-03-17', '青岛', '项目组长', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `ums_member` VALUES (13, NULL, '666', 'E10ADC3949BA59ABBE56E057F20F883E', '454', '43567698987', 1, NULL, NULL, 0, '2019-03-08', '33', '234', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `ums_member` VALUES (14, NULL, 'wanger', 'E10ADC3949BA59ABBE56E057F20F883E', '王二', '16867453472', 1, NULL, NULL, 0, '2019-03-08', '南京', '学生', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `ums_member` VALUES (15, 4, '100000', '96E79218965EB72C92A549DD5A330112', NULL, '15234567890', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for ums_member_level
@@ -1943,7 +1909,7 @@ CREATE TABLE `ums_member_level`  (
   `priviledge_birthday` int(1) NULL DEFAULT NULL COMMENT '是否有生日特权',
   `note` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会员等级表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会员等级表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of ums_member_level
