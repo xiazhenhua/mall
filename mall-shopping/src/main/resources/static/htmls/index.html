@@ -1202,40 +1202,7 @@
 						<div class="container">
 							<h3>Top Brands</h3>
 							<div class="sliderfig">
-								<ul id="flexiselDemo1">
-									<li>
-										<a href="#" onclick="getBrandCategory(Samsung);">
-											<img src="images/brand/tb1.jpg" alt="Samsung" name="Samsung" class="img-responsive" />
-										</a>
-
-									</li>
-									<li>
-										<img src="images/brand/tb2.jpg" alt="CANON" class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/1086.jpg" alt="CASIO " class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/1813.jpg" alt="SONY " class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/1910.jpg" alt="MI " class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/1999.jpg" alt="PHILIPS" class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/1911.jpg" alt="VIVO " class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/tb3.jpg" alt="HP" class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/tb4.jpg" alt="CISCO" class="img-responsive" />
-									</li>
-									<li>
-										<img src="images/brand/tb5.jpg" alt="" class="img-responsive" />
-									</li>
+								<ul id="flexiselDemo1" class ="brandList">
 								</ul>
 							</div>
 							<script type="text/javascript">
@@ -1343,14 +1310,36 @@
 		$(document).ready(function () {
 			getNewProduct();
 			getDiscountProduct();
-			getBrandPic();
+			getBrandList();
 			// loadPage(pageIndex, pageSize);
 		});
-		function getBrandPic(){
-			
+		function getBrandList(){
+			var mycontent = $(".brandList");
+			var htmls = "";
+			$.ajax({
+				type: "GET",
+				url: "/home/brandList",
+				async: false,
+				success: function (data) {
+					var jsonArray = data;
+					var sno;
+					for (var temp in jsonArray) {
+						sno = parseInt(temp) + 1;
+						htmls += '<li><div id ="takeLogo" class ="takeLogo"><a href="#" onclick="getBrandCategory(\''+jsonArray[temp].id+'\')">'+
+						'<img src="'+jsonArray[temp].logo+'" alt="'+jsonArray[temp].name+'" /></a></div></li>'
+					}
+					mycontent.html(htmls);
+				}
+			});
 		}
-		function getBrandCategory(){
-
+		function getBrandCategory(id){
+			$.get("getOneBrandCategory",
+				{
+					brandId:id
+				},
+				function (data) {
+					alert(data);
+			});
 		}
 		function getDiscountProduct() {
 			var mycontent = $("#discountProduct");

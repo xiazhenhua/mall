@@ -97,6 +97,12 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="getPmsBrandList" resultMap="BaseResultMap">
+  select 
+  <include refid="Base_Column_List" />
+    from pms_brand where show_status=1
+ ORDER BY sort desc limit 6
+  </select>
   <select id="selectByExample" parameterType="com.macro.mall.model.PmsBrandExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

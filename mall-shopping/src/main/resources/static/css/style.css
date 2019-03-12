@@ -38,6 +38,11 @@ a:hover,
 a:focus {text-decoration: none;}
 
 ul {padding: 0;margin: 0;}
+ul #takeLogo {
+	width:150px;
+	height:150px;
+}
+
 ul li {list-style:none;}
 
 select {border: 0;background: transparent;}

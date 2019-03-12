@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cacro.mall.shopping.service.IHomeService;
+import com.macro.mall.model.PmsBrand;
 import com.macro.mall.model.PmsProduct;
 import com.macro.mall.model.PmsProductCategory;
 import com.macro.mall.model.PmsProductLadderVO;
@@ -42,6 +43,17 @@ public class HomeController {
 	public List<PmsProductLadderVO> getDiscountProductList() {
 		return homeService.getDiscountProductList();
 	}
+	@RequestMapping(value="/brandList",method= RequestMethod.GET)
+	@ResponseBody
+	public List<PmsBrand> getBrandList() {
+		return homeService.getBrandList();
+	}
+	@RequestMapping(value="/getOneBrandCategory",method= RequestMethod.GET)
+	@ResponseBody
+	public List<PmsBrand> getOneBrandCategory() {
+		return homeService.getBrandList();
+	}
+	
 	
 	
 }

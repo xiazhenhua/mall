@@ -15,7 +15,9 @@ public interface PmsBrandMapper {
     int insert(PmsBrand record);
 
     int insertSelective(PmsBrand record);
-
+    //首页品牌轮播
+	List<PmsBrand> getPmsBrandList(); 
+	
     List<PmsBrand> selectByExampleWithBLOBs(PmsBrandExample example);
 
     List<PmsBrand> selectByExample(PmsBrandExample example);
