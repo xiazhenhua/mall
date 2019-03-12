@@ -112,7 +112,11 @@ header .form-search button:hover {color: #eee;}
 
 .carousel-inner{}
 .banner div{margin-bottom: 10px;}
-
+.sabrosus{
+	text-align: right;
+	font-size: 17px;
+	margin-right: 40px;
+}
 .heading {border-bottom: 1px solid #ddd;margin-bottom: 30px;}
 .heading h1, .heading h2{font-size: 30px;padding-bottom: 10px;}
 

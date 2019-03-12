@@ -24,9 +24,10 @@
 	<!-- jQuery and Modernizr-->
 	<script src="../js/jquery.min.js"></script>
 
-	<script src="../js/jquery.paging.min.js"></script>
 	<!-- Core JavaScript Files -->
 	<script src="../js/bootstrap.min.js"></script>
+	
+	<script src="../js/jquery.paging.min.js"></script>
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -187,6 +188,8 @@
 								
 							</div>
 						</div>
+						 <!--页码块-->
+						 <div id="Pagination" class="sabrosus"></div>
 					</div>
 				</div>
 				<div id="sidebar" class="col-md-4">
@@ -385,7 +388,7 @@
 								'<div class="image"><a href="/getProduct"><img src="'+jsonArray[temp].pic+'" /></a></div><div class="buttons">'+
 								'<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a><a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>'+
 								'<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a></div><div class="caption"><div class="name">'+
-								'<h3><a href="/getProduct">小米8 全面屏游戏智能手机 6GB+64GB</a></h3></div><div class="price">￥3122<span>￥2298</span></div>'+
+								'<h3><a href="/getProduct">'+jsonArray[temp].name+'</a></h3></div><div class="price">￥'+jsonArray[temp].price+'<span>￥'+(parseInt(jsonArray[temp].price,10)+parseInt(200,10))+'</span></div>'+
 								'<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span'+
 								'class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div></div></div></div>'
 								}
