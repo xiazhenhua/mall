@@ -2,6 +2,8 @@ package com.macro.mall.mapper;
 
 import com.macro.mall.model.PmsProduct;
 import com.macro.mall.model.PmsProductExample;
+import com.macro.mall.model.PmsProductLadderVO;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -17,6 +19,8 @@ public interface PmsProductMapper {
     int insertSelective(PmsProduct record);
     //获取新品列表
     List<PmsProduct> getNewProductList();
+    //获取折扣商品列表
+    List<PmsProductLadderVO> getDiscountProductList();
     
     List<PmsProduct> selectByExampleWithBLOBs(PmsProductExample example);
 

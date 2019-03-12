@@ -1167,7 +1167,6 @@
 						<h2>新机专区</h2>
 					</div>
 					<div class="products" id ="newProduct">
-						
 					</div>
 				</div>
 			</div>
@@ -1188,80 +1187,8 @@
 						</div>
 					</div>
 
-					<div class="products">
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="/getProduct"><img src="images/discount/45602b8f08b313ec.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name">
-										<h3><a href="/getProduct">OPPO R17</a></h3>
-									</div>
-									<div class="price">￥2798<span>￥3122</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-										 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="/getProduct"><img src="images/discount/2361563781a99acb.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name">
-										<h3><a href="/getProduct">Apple iPhone XR (A2108)</a></h3>
-									</div>
-									<div class="price">￥8998<span>￥10122</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-										 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="/getProduct"><img src="images/discount/5bc831fdN61f8d9d2.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name">
-										<h3><a href="/getProduct">vivo Z3</a></h3>
-									</div>
-									<div class="price">￥1698<span>￥2122</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-										 class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span
-										 class="glyphicon glyphicon-star-empty"></span></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-							<div class="product">
-								<div class="image"><a href="/getProduct"><img src="images/discount/5b0fcab1N217bcf3d.jpg" /></a></div>
-								<div class="buttons">
-									<a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-									<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
-									<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
-								</div>
-								<div class="caption">
-									<div class="name">
-										<h3><a href="/getProduct">小米8</a></h3>
-									</div>
-									<div class="price">￥2298<span>￥2699</span></div>
-									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-										 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
-								</div>
-							</div>
-						</div>
+					<div class="products" id= "discountProduct">
+						
 					</div>
 				</div>
 			</div>
@@ -1277,8 +1204,8 @@
 							<div class="sliderfig">
 								<ul id="flexiselDemo1">
 									<li>
-										<a href="/goToContact">
-											<img src="images/brand/tb1.jpg" alt="Samsung" class="img-responsive" />
+										<a href="#" onclick="getBrandCategory(Samsung);">
+											<img src="images/brand/tb1.jpg" alt="Samsung" name="Samsung" class="img-responsive" />
 										</a>
 
 									</li>
@@ -1415,9 +1342,39 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			getNewProduct();
+			getDiscountProduct();
+			getBrandPic();
 			// loadPage(pageIndex, pageSize);
 		});
+		function getBrandPic(){
+			
+		}
+		function getBrandCategory(){
 
+		}
+		function getDiscountProduct() {
+			var mycontent = $("#discountProduct");
+			var htmls = "";
+			$.ajax({
+				type: "GET",
+				url: "/home/discountProductList",
+				async: false,
+				success: function (data) {
+					var jsonArray = data;
+					var sno;
+					for (var temp in jsonArray) {
+						sno = parseInt(temp) + 1;
+						htmls += '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><div class="product"><div class="image"><a href="/getProduct">'+
+						'<img src="'+jsonArray[temp].pic+'" /></a></div><div class="buttons"><a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>'+
+						'<a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a><a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>'+
+						'</div><div class="caption"><div class="name"><h3><a href="/getProduct">'+jsonArray[temp].name+'</a></h3></div><div class="price">￥'+jsonArray[temp].price+'<span>￥'+jsonArray[temp].originalPrice+'</span></div>'+
+						'<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">'+
+						'</span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div></div></div></div>'
+					}
+					mycontent.html(htmls);
+				}
+			});
+		}
 		function getNewProduct() {
 			var mycontent = $("#newProduct");
 			var htmls = "";

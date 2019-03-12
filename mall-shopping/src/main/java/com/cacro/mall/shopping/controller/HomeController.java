@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cacro.mall.shopping.service.IHomeService;
 import com.macro.mall.model.PmsProduct;
 import com.macro.mall.model.PmsProductCategory;
+import com.macro.mall.model.PmsProductLadderVO;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -36,7 +37,11 @@ public class HomeController {
 	public List<PmsProduct> getNewProductList() {
 		return homeService.getNewProductList();
 	}
-	
+	@RequestMapping(value="/discountProductList",method= RequestMethod.GET)
+	@ResponseBody
+	public List<PmsProductLadderVO> getDiscountProductList() {
+		return homeService.getDiscountProductList();
+	}
 	
 	
 }
