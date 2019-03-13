@@ -117,6 +117,9 @@ header .form-search button:hover {color: #eee;}
 	font-size: 17px;
 	margin-right: 40px;
 }
+.sabrosus >a{
+	padding-left: 7px;
+}
 .heading {border-bottom: 1px solid #ddd;margin-bottom: 30px;}
 .heading h1, .heading h2{font-size: 30px;padding-bottom: 10px;}
 
@@ -138,7 +141,7 @@ header .form-search button:hover {color: #eee;}
 .product .image-more img{border: 1px solid #DDD;max-height: 85px;margin-bottom: 10px;}
 .product .buttons {margin: 10px 0;}
 .product .buttons a {background-color: #eee;}
-.product .name {border-bottom: 1px solid #eee;}
+.product .name {border-bottom: 1px solid #eee; height :46px;}
 .product .name h3{font-weight: 500;font-size: 20px;color: #666;margin-top: 10px;}
 .product .info ul li{margin: 10px 0;}
 .product .price {font-size: 22px;margin: 10px 0;}
