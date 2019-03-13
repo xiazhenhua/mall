@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cacro.mall.shopping.service.IUmsMemberService;
-import com.macro.mall.model.UmsMember;
 
 @RestController
 public class UmsMemberController {
@@ -22,12 +21,11 @@ public class UmsMemberController {
 	@PostMapping(value = "/login")
 	@ResponseBody
 	public String login(String username, String password,HttpSession session) {
-		UmsMember member  = umsMemberService.login(username, password);
-		if (member!=null) {
-			session.setAttribute("user", member);
-			return "ok";
-		}
-		return null;
+		String token  = umsMemberService.login(username, password);
+		 if (token != null) {
+	            return "ok";
+	      }
+		return "用户名或密码错误";
 	}
 	@PostMapping(value="/goRegister")
 	@ResponseBody

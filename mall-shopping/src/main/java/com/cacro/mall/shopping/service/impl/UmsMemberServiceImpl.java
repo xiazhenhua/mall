@@ -5,18 +5,21 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import com.cacro.mall.shopping.model.CommonResult;
 import com.cacro.mall.shopping.model.MemberDetails;
-import com.cacro.mall.shopping.service.RedisService;
 import com.cacro.mall.shopping.service.IUmsMemberService;
+import com.cacro.mall.shopping.util.JwtTokenUtil;
 import com.cacro.mall.shopping.util.MD5Util;
 import com.macro.mall.mapper.UmsMemberMapper;
 import com.macro.mall.model.UmsMember;
@@ -24,9 +27,15 @@ import com.macro.mall.model.UmsMemberExample;
 
 @Service
 public class UmsMemberServiceImpl implements IUmsMemberService {
-
+//	private static final Logger LOGGER = LoggerFactory.getLogger(UmsMemberServiceImpl.class);
 	@Autowired
 	private UmsMemberMapper memberMapper;
+	@Autowired
+    private AuthenticationManager authenticationManager;
+	@Autowired
+    private UserDetailsService userDetailsService;
+	@Autowired
+    private JwtTokenUtil jwtTokenUtil;
 //	@Autowired
 ////	private PasswordEncoder passwordEncoder;
 //	@Autowired
@@ -37,12 +46,16 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 //	private Long AUTH_CODE_EXPIRE_SECONDS;
 
 	@Override
-	public UmsMember login(String username, String password) {
+	public String login(String username, String password){
 		// TODO Auto-generated method stub
-		if (memberMapper.selectByUsername(username) == null) {
-			return null;
-		}
-		return memberMapper.loginMember(username, MD5Util.MD5EncodeUtf8(password));
+		String token = null;
+        //密码需要客户端加密后传递
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,MD5Util.MD5EncodeUtf8(password));
+        Authentication authentication = authenticationManager.authenticate(authenticationToken);
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+		token = jwtTokenUtil.generateToken(userDetails);
+        return token;
 	}
 
 	@Override

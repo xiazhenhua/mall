@@ -16,7 +16,7 @@ public interface IUmsMemberService {
 	 * @param password
 	 * @return
 	 */
-	UmsMember login(String username,String password);
+	String login(String username,String password);
 
     /**
      * 用户注册
