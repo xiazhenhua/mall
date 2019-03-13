@@ -68,9 +68,8 @@ public class HomeController {
 	public List<PmsProduct> getProductCategory(HttpServletRequest request) {
 		String currentPage = request.getParameter("curpage") == null ? "0" : request.getParameter("curpage");
 		String rows = request.getParameter("page_Size") == null ? "3" : request.getParameter("page_Size");
+		String globalStr = request.getParameter("globalStr");
 		Page pager = new Page(currentPage, rows);
 		return homeService.getProductCategory(pager);
 	}
-	
-	
 }
