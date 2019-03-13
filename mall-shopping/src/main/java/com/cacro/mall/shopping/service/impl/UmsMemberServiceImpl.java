@@ -37,8 +37,6 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 	@Autowired
     private JwtTokenUtil jwtTokenUtil;
 //	@Autowired
-////	private PasswordEncoder passwordEncoder;
-//	@Autowired
 ////	private RedisService redisService;
 //	@Value("${redis.key.prefix.authCode}")
 //	private String REDIS_KEY_PREFIX_AUTH_CODE;

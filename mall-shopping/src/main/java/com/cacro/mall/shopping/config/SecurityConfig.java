@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -26,16 +27,27 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private IUmsMemberService memberService;
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        //解决authenticationManager无法注入
+		return super.authenticationManagerBean();
+    }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET, // 允许对于网站静态资源的无授权访问
                         "/",
                         "/*.html",
+                        "/images/*",
+                        "/*",
+                        "/*/*",
+                        "/*/*/*",
                         "/favicon.ico",
                         "/**/*.html",
                         "/**/*.css",
                         "/**/*.js",
+                        "/login",
                         "/swagger-resources/**",
                         "/v2/api-docs/**"
                 )
@@ -49,8 +61,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/member/**","/returnApply/**")// 测试时开启
                 .permitAll()
-                .anyRequest()// 除上面外的所有请求全部需要鉴权认证
-                .authenticated()
+//                .anyRequest()// 除上面外的所有请求全部需要鉴权认证
+//                .authenticated()
                 
 //                .and()
 //                .requiresChannel()
