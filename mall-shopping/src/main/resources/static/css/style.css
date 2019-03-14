@@ -145,7 +145,10 @@ header .form-search button:hover {color: #eee;}
 .product .buttons {margin: 10px 0;}
 .product .buttons a {background-color: #eee;}
 .product .name {border-bottom: 1px solid #eee; height :46px;}
-.product .name h3{font-weight: 500;font-size: 20px;color: #666;margin-top: 10px;}
+.product .name h3{font-weight: 700;font-size: 20px;color: #666;margin-top: 10px;}
+
+.product .name span{font-weight: 400;font-size: 18px;color: #666;margin-top: 10px;}
+
 .product .info ul li{margin: 10px 0;}
 .product .price {font-size: 22px;margin: 10px 0;}
 .product .price span{color: #aaa;margin-left: 10px;text-decoration: line-through;} 

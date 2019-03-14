@@ -58,9 +58,11 @@ public class OmsCartItemServiceImpl implements IOmsCartItemService {
         	cartItem.setProductSubTitle(pro.getSubTitle());
         	cartItem.setProductCategoryId(pro.getProductCategoryId());
             cartItem.setCreateDate(new Date());
+            cartItem.setProductPic(pro.getPic());
             count = cartItemMapper.insert(cartItem);
         } else {
         	existCartItem.setModifyDate(new Date());
+        	existCartItem.setProductPic(pro.getPic());
             existCartItem.setQuantity(existCartItem.getQuantity() + 1);
             count = cartItemMapper.updateByPrimaryKeySelective(existCartItem);
         }

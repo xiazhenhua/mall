@@ -9,7 +9,6 @@ import com.macro.mall.model.UmsMember;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -30,17 +29,14 @@ public class OmsCartItemController {
     private IOmsCartItemService cartItemService;
     @Autowired
     private IUmsMemberService memberService;
-    public static HttpSession session;
-    public static String name = (String) session.getAttribute("user");
-    public UmsMember member = memberService.getByUsername(name);
 
     @ApiOperation("添加商品到购物车")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public Object add(@RequestParam Long id,HttpSession session) {
     	OmsCartItem cartItem = new OmsCartItem();
-    	String t = (String)session.getAttribute("user");
-    	cartItem.setMemberNickname(t);
+    	String name = (String) session.getAttribute("user");
+    	cartItem.setMemberNickname(name);
     	cartItem.setProductId(id);
 //    	cartItem.set
         int count = cartItemService.add(cartItem);
@@ -53,7 +49,9 @@ public class OmsCartItemController {
     @ApiOperation("获取某个会员的购物车列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public Object list() {
+    public Object list(HttpSession session) {
+    	String name = (String) session.getAttribute("user");
+        UmsMember member = memberService.getByUsername(name);
         List<OmsCartItem> cartItemList = cartItemService.list(member.getId());
         return new CommonResult().success(cartItemList);
     }
@@ -73,7 +71,7 @@ public class OmsCartItemController {
     public Object updateQuantity(@RequestParam Long id,
                                  @RequestParam Integer quantity,HttpSession session) {
     	String name = (String) session.getAttribute("user");
-    	UmsMember member = memberService.getByUsername(name);
+        UmsMember member = memberService.getByUsername(name);
         int count = cartItemService.updateQuantity(id,member.getId(),quantity);
         if (count > 0) {
             return new CommonResult().success(count);
@@ -104,8 +102,9 @@ public class OmsCartItemController {
     @ApiOperation("删除购物车中的某个商品")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
-    public Object delete(@RequestParam("ids") List<Long> ids) {
-    	
+    public Object delete(@RequestParam("ids") List<Long> ids,HttpSession session) {
+    	String name = (String) session.getAttribute("user");
+        UmsMember member = memberService.getByUsername(name);
         int count = cartItemService.delete(member.getId(),ids);
         if (count > 0) {
             return new CommonResult().success(count);
@@ -116,7 +115,9 @@ public class OmsCartItemController {
     @ApiOperation("清空购物车")
     @RequestMapping(value = "/clear", method = RequestMethod.POST)
     @ResponseBody
-    public Object clear() {
+    public Object clear(HttpSession session) {
+    	String name = (String) session.getAttribute("user");
+        UmsMember member = memberService.getByUsername(name);
         int count = cartItemService.clear(member.getId());
         if (count > 0) {
             return new CommonResult().success(count);
