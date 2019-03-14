@@ -3,9 +3,13 @@ package com.cacro.mall.shopping.service.impl;
 import com.cacro.mall.shopping.service.IOmsCartItemService;
 import com.cacro.mall.shopping.service.IUmsMemberService;
 import com.macro.mall.mapper.OmsCartItemMapper;
+import com.macro.mall.mapper.PmsProductMapper;
 import com.macro.mall.model.OmsCartItem;
 import com.macro.mall.model.OmsCartItemExample;
+import com.macro.mall.model.PmsProduct;
 import com.macro.mall.model.UmsMember;
+
+import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -13,6 +17,8 @@ import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * 购物车管理Service实现类
@@ -22,28 +28,41 @@ import java.util.List;
 public class OmsCartItemServiceImpl implements IOmsCartItemService {
     @Autowired
     private OmsCartItemMapper cartItemMapper;
+    @Autowired
+    private PmsProductMapper pmsProductMapper;
 //    @Autowired
 //    private PortalProductDao productDao;
 //    @Autowired
 //    private OmsPromotionService promotionService;
     @Autowired
     private IUmsMemberService memberService;
-
+    
+    public String getUsername(HttpRequest request) {
+		return null;
+    	
+    }
     @Override
     public int add(OmsCartItem cartItem) {
         int count;
-        UmsMember currentMember =memberService.getCurrentMember();
+        UmsMember currentMember =memberService.getByUsername(cartItem.getMemberNickname());
         cartItem.setMemberId(currentMember.getId());
         cartItem.setMemberNickname(currentMember.getNickname());
         cartItem.setDeleteStatus(0);
         OmsCartItem existCartItem = getCartItem(cartItem);
+        Long id =cartItem.getProductId();
+        PmsProduct pro = pmsProductMapper.selectByPrimaryKey(id);
         if (existCartItem == null) {
+        	cartItem.setQuantity(1);
+        	cartItem.setPrice(pro.getPrice());
+        	cartItem.setProductName(pro.getName());
+        	cartItem.setProductSubTitle(pro.getSubTitle());
+        	cartItem.setProductCategoryId(pro.getProductCategoryId());
             cartItem.setCreateDate(new Date());
             count = cartItemMapper.insert(cartItem);
         } else {
-            cartItem.setModifyDate(new Date());
-            existCartItem.setQuantity(existCartItem.getQuantity() + cartItem.getQuantity());
-            count = cartItemMapper.updateByPrimaryKey(existCartItem);
+        	existCartItem.setModifyDate(new Date());
+            existCartItem.setQuantity(existCartItem.getQuantity() + 1);
+            count = cartItemMapper.updateByPrimaryKeySelective(existCartItem);
         }
         return count;
     }

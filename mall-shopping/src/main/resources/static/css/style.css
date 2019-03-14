@@ -120,6 +120,9 @@ header .form-search button:hover {color: #eee;}
 .sabrosus >a{
 	padding-left: 7px;
 }
+.sabrosus >span{
+	padding-left:7px
+}
 .heading {border-bottom: 1px solid #ddd;margin-bottom: 30px;}
 .heading h1, .heading h2{font-size: 30px;padding-bottom: 10px;}
 

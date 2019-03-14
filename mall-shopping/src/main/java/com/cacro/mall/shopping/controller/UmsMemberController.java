@@ -23,9 +23,10 @@ public class UmsMemberController {
 	public String login(String username, String password,HttpSession session) {
 		String token  = umsMemberService.login(username, password);
 		 if (token != null) {
-	            return "ok";
+			 session.setAttribute("user", username);
+            return token;
 	      }
-		return "用户名或密码错误";
+		return "error";
 	}
 	@PostMapping(value="/goRegister")
 	@ResponseBody

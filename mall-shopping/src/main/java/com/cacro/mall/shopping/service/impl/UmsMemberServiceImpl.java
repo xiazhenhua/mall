@@ -7,7 +7,9 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,6 +35,8 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 	@Autowired
     private AuthenticationManager authenticationManager;
 	@Autowired
+    private PasswordEncoder passwordEncoder;
+	@Autowired
     private UserDetailsService userDetailsService;
 	@Autowired
     private JwtTokenUtil jwtTokenUtil;
@@ -48,11 +52,17 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 		// TODO Auto-generated method stub
 		String token = null;
         //密码需要客户端加密后传递
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,MD5Util.MD5EncodeUtf8(password));
-        Authentication authentication = authenticationManager.authenticate(authenticationToken);
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-		token = jwtTokenUtil.generateToken(userDetails);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+		try {
+            Authentication authentication = authenticationManager.authenticate(authenticationToken);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            token = jwtTokenUtil.generateToken(userDetails);
+//            updateLoginTimeByUsername(username);
+//            insertLoginLog(username);
+        } catch (AuthenticationException e) {
+        	throw e;
+        }
         return token;
 	}
 
@@ -99,7 +109,8 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 	        //验证码绑定手机号并存储到redis
 //	        redisService.set(REDIS_KEY_PREFIX_AUTH_CODE+telephone,sb.toString());
 //	        redisService.expire(REDIS_KEY_PREFIX_AUTH_CODE+telephone,AUTH_CODE_EXPIRE_SECONDS);
-	        return new CommonResult().success("获取验证码成功",sb.toString());
+//	        return new CommonResult().success("获取验证码成功",sb.toString());
+	        return null;
 	    }
 
 	    @Override
@@ -107,17 +118,18 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 	        UmsMemberExample example = new UmsMemberExample();
 	        example.createCriteria().andPhoneEqualTo(telephone);
 	        List<UmsMember> memberList = memberMapper.selectByExample(example);
-	        if(CollectionUtils.isEmpty(memberList)){
-	            return new CommonResult().failed("该账号不存在");
-	        }
-	        //验证验证码
-	        if(!verifyAuthCode(authCode,telephone)){
-	            return new CommonResult().failed("验证码错误");
-	        }
-	        UmsMember umsMember = memberList.get(0);
-//	        umsMember.setPassword(passwordEncoder.encodePassword(password,null));
-	        memberMapper.updateByPrimaryKeySelective(umsMember);
-	        return new CommonResult().success("密码修改成功",null);
+//	        if(CollectionUtils.isEmpty(memberList)){
+//	            return new CommonResult().failed("该账号不存在");
+//	        }
+//	        //验证验证码
+//	        if(!verifyAuthCode(authCode,telephone)){
+//	            return new CommonResult().failed("验证码错误");
+//	        }
+//	        UmsMember umsMember = memberList.get(0);
+////	        umsMember.setPassword(passwordEncoder.encodePassword(password,null));
+//	        memberMapper.updateByPrimaryKeySelective(umsMember);
+//	        return new CommonResult().success("密码修改成功",null);
+	        return null;
 	    }
 
 	    @Override

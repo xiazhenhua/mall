@@ -395,8 +395,11 @@
 				},
 				async: false,
 				success: function (data) {
-					alert(data)
-					allCountNum = Number(data);
+					if(data ==null){
+						alert("系统错误")
+					}
+					alert("加入购物车成功！");
+					
 				}
 			});
 		}

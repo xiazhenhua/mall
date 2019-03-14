@@ -86,10 +86,11 @@
 				password:$("#password").val()
 			},
 			success:function(data){
-				if(data=="ok"){
-					window.location.href="goToIndex";
-				}else{
+				if(data=="error"){
 					alert("用户名或密码错");
+				}else{
+					sessionStorage.setItem("user",data);
+					window.location.href="goToIndex";
 				}
 			}
 		
