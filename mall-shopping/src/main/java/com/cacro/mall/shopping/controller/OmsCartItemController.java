@@ -66,7 +66,7 @@ public class OmsCartItemController {
     }
 
     @ApiOperation("修改购物车中某个商品的数量")
-    @RequestMapping(value = "/update/quantity", method = RequestMethod.GET)
+    @RequestMapping(value = "/update/quantity", method = RequestMethod.POST)
     @ResponseBody
     public Object updateQuantity(@RequestParam Long id,
                                  @RequestParam Integer quantity,HttpSession session) {

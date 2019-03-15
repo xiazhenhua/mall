@@ -277,26 +277,61 @@
 		});
 	
 	function getMemberCart(){
-			var mycontent = $(".proList");
+			var mycontent = $("#proList");
 			var htmls = "";
 			mycontent.innerHTML = "";
 			$.ajax({
 				type: "GET",
 				url: "/cart/list",
 				success: function (data) {
-					var jsonArray = data;
+					var jsonArray = data.data;
 					for (var temp in jsonArray) {
 						htmls += '<div class="row"><div class="product well"><div class="col-md-3"><div class="image"><img src="' + jsonArray[temp].productPic +'" /></div></div><div class="col-md-9"><div class="caption">'+
-					'<div class="name"><h3><a href="#">' + jsonArray[temp].productName +'</a></h3></div>'+
-					'<div class="info"><ul><li>Brand: Samsung</li><li>SkuID: '+jsonArray[temp].productSkuId+'</li></ul></div><div class="price">$5722<span>$6498</span></div>'+
-					'<label>数量: </label> <input class="form-inline quantity" type="text" value="\''+jsonArray[temp].quantity+'\'"><a href="#" class="btn btn-2 ">Update</a>'+
-					'<hr><a href="#" class="btn btn-default pull-right">移除</a></div></div><div class="clear"></div></div></div>'
+					'<div class="name"><h3><a href="#">' + jsonArray[temp].productName +'</a></h3><span>'+jsonArray[temp].productSubTitle+'</span></div>'+
+					'<div class="info"><ul><li>SkuID: '+jsonArray[temp].productSkuId+'</li></ul></div><div class="price">$'+jsonArray[temp].price+'</div>'+
+					'<label>数量: </label> <input class="form-inline quantity" type="number" value="'+Number(jsonArray[temp].quantity)+'" id ="proNumber"><a href="#" class="btn btn-2 " onclick="updateProNumber(\''+jsonArray[temp].id+'\')">Update</a>'+
+					'<hr><a href="#" class="btn btn-default pull-right" onclick="removeProduct('+jsonArray[temp].id+');">移除</a></div></div><div class="clear"></div></div></div>'
 				}
 				mycontent.html(htmls);
 				}
 			});
 		}
-		function getBrandNameAndOthers(){
+		function removeProduct(id) {
+			$.ajax({
+				type: "post",
+				url: "/cart/delete",
+				data:{
+					ids:id
+				},
+				async: false,
+				success: function (data) {
+					if (data.code ==200) {
+						alert("已从购物车删除");
+						getMemberCart();
+					}else{
+						alert("API错误")
+					}
+				}
+			});
+		}
+		function updateProNumber(id){
+			$.ajax({
+				type: "post",
+				url: "/cart/update/quantity",
+				data:{
+					id:id,
+					quantity:$("#proNumber").val()
+				},
+				async: false,
+				success: function (data) {
+					if (data.code ==200) {
+						alert("更新成功");
+						getMemberCart();
+					}else{
+						alert("API错误")
+					}
+				}
+			});
 		}
 	</script>
 </body>
