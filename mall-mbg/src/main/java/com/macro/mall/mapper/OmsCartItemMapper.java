@@ -2,6 +2,8 @@ package com.macro.mall.mapper;
 
 import com.macro.mall.model.OmsCartItem;
 import com.macro.mall.model.OmsCartItemExample;
+
+import java.math.BigDecimal;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,7 +15,9 @@ public interface OmsCartItemMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(OmsCartItem record);
-
+    
+    List<BigDecimal> totalPrice(Long memberId);
+    
     int insertSelective(OmsCartItem record);
 
     List<OmsCartItem> selectByExample(OmsCartItemExample example);

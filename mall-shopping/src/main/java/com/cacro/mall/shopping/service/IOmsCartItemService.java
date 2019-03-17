@@ -3,6 +3,7 @@ package com.cacro.mall.shopping.service;
 import com.macro.mall.model.OmsCartItem;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -22,6 +23,13 @@ public interface IOmsCartItemService {
      * 根据会员编号获取购物车列表
      */
     List<OmsCartItem> list(Long memberId);
+    
+    /**
+     * 计算购物车总体价格
+     * @param memberId
+     * @return
+     */
+    List<BigDecimal> totalPrice(Long memberId);
 
     /**
      * 获取包含促销活动信息的购物车列表

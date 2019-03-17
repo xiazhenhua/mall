@@ -163,7 +163,13 @@ header .form-search button:hover {color: #eee;}
 .product-desc{margin: 50px 0;}
 
 .pricedetails {margin-top: 20px;}
-.pricedetails table td {padding-right: 70px;}
+
+.pricedetails #checkStyle{background-color: #f40;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 15px;}
+
+.pricedetails table td {padding-right: 70px;color: #f40; font-size: 20px;}
 
 
 /* IMG thumb - product.html */

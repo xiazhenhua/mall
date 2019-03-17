@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -111,7 +112,21 @@ public class OmsCartItemController {
         }
         return new CommonResult().failed();
     }
-
+    
+    @ApiOperation("计算购物车总价")
+    @RequestMapping(value = "/price", method = RequestMethod.POST)
+    @ResponseBody
+    public Double totalPrice(HttpSession session) {
+    	String name = (String) session.getAttribute("user");
+        UmsMember member = memberService.getByUsername(name);
+        List<BigDecimal> priceList = cartItemService.totalPrice(member.getId());
+		double c = 0.00;
+        for (BigDecimal bigDecimal : priceList) {
+        	c+=bigDecimal.doubleValue();
+		}
+        return c;
+    }
+    
     @ApiOperation("清空购物车")
     @RequestMapping(value = "/clear", method = RequestMethod.POST)
     @ResponseBody

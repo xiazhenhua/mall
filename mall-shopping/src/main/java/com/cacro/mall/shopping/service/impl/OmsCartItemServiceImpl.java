@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -154,4 +155,9 @@ public class OmsCartItemServiceImpl implements IOmsCartItemService {
         example.createCriteria().andMemberIdEqualTo(memberId);
         return cartItemMapper.updateByExampleSelective(record,example);
     }
+	@Override
+	public List<BigDecimal> totalPrice(Long memberId) {
+		List<BigDecimal> price = cartItemMapper.totalPrice(memberId);
+		return price;
+	}
 }

@@ -101,6 +101,10 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="totalPrice" parameterType="java.lang.Long" resultType="java.math.BigDecimal">
+  	select price*quantity as titalPrice from oms_cart_item 
+  	where member_id = #{id,jdbcType=BIGINT} and delete_status=0
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
