@@ -192,7 +192,7 @@
 								<td id ="totalPriceValue"></td>
 							</tr>
 						</table>
-						<center><a href="#" class="btn btn-1" id = "checkStyle">结算</a></center>
+						<center><a href="#" class="btn btn-1" id = "checkStyle" onclick = "payOrder();">结算</a></center>
 					</div>
 				</div>
 			</div>
@@ -274,7 +274,7 @@
 					var jsonArray = data.data;
 					for (var temp in jsonArray) {
 						htmls += '<div class="row"><div class="product well"><div class="col-md-3"><div class="image"><img src="' + jsonArray[temp].productPic +'" /></div></div><div class="col-md-9"><div class="caption">'+
-					'<div class="name"><h3><a href="#">' + jsonArray[temp].productName +'</a></h3><span>'+jsonArray[temp].productSubTitle+'</span></div>'+
+					'<div class="name"><h3><a href="#" onclick="gotoProductPage(\''+jsonArray[temp].productId+'\')">' + jsonArray[temp].productName +'</a></h3><span>'+jsonArray[temp].productSubTitle+'</span></div>'+
 					'<div class="info"><ul><li>SkuID: '+jsonArray[temp].productSkuId+'</li></ul></div><div class="price">￥'+jsonArray[temp].price+'</div>'+
 					'<label>数量: </label> <input class="form-inline quantity" type="number" value="'+Number(jsonArray[temp].quantity)+'" id ="proNumber"><a href="#" class="btn btn-2 " onclick="updateProNumber(\''+jsonArray[temp].id+'\')">Update</a>'+
 					'<hr><a href="#" class="btn btn-default pull-right" onclick="removeProduct('+jsonArray[temp].id+');">移除</a></div></div><div class="clear"></div></div></div>'
@@ -330,6 +330,38 @@
 					}else{
 						alert("API错误")
 					}
+				}
+			});
+		}
+		function payOrder(){
+			$.ajax({
+				type: "get",
+				url: "/alipay/pay",
+				async: false,
+				success: function (data) {
+					if (data!=null) {
+						alert("支付成功");
+						getMemberCart();
+					}else{
+						alert("API错误")
+					}
+				}
+			});
+		}
+
+		function gotoProductPage(productId){
+			$.ajax({
+				type: "get",
+				url: "/product/productItem",
+				data:{
+					productId:productId
+				},
+				async: false,
+				success: function (data) {
+					if(data.code ==200){
+
+					}
+					alert(data.data);
 				}
 			});
 		}

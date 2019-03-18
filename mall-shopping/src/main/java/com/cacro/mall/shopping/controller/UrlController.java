@@ -52,4 +52,12 @@ public class UrlController {
 	public String getProduct(){
 		return "product";
 	}
+//	@RequestMapping("/pay/success")
+//	public String paySuccess(){
+//		return "success";
+//	}
+//	@RequestMapping("/error")
+//	public String payError(){
+//		return "error";
+//	}
 }

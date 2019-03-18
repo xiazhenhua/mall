@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 
 /**
  * 购物车管理Service
