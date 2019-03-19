@@ -350,20 +350,10 @@
 		}
 
 		function gotoProductPage(productId){
-			$.ajax({
-				type: "get",
-				url: "/product/productItem",
-				data:{
-					productId:productId
-				},
-				async: false,
-				success: function (data) {
-					if(data.code ==200){
-
-					}
-					alert(data.data);
-				}
-			});
+			
+			sessionStorage.setItem("proId",productId);
+			window.location.href="/getProduct";
+			
 		}
 		function updateProNumber(id){
 			$.ajax({
