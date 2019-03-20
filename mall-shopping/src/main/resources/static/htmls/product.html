@@ -169,8 +169,8 @@
 				<div class="col-lg-12">
 					<ul class="breadcrumb">
 						<li><a href="/goToIndex">Home</a></li>
-						<li><a href="/goToCategory">Category</a></li>
-						<li><a href="#">Samsung Galaxy</a></li>
+						<li><a href="/goToCategory" id ="productCategoryName"></a></li>
+						<li><a href="#" id ="brandName"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -178,40 +178,32 @@
 				<div id="main-content" class="col-md-12">
 					<div class="product">
 						<div class="col-md-6">
-							<div class="image">
-								<img src="images/galaxy-note.jpg" />
-								<div class="image-more">
-									<ul class="row">
-										<li class="col-lg-3 col-sm-3 col-xs-4">
-											<a href="#"><img class="img-responsive" src="images/galaxy-note.jpg"></a>
-										</li>
-										<li class="col-lg-3 col-sm-3 col-xs-4">
-											<a href="#"><img class="img-responsive" src="images/galaxy-note-2.jpg"></a>
-										</li>
-										<li class="col-lg-3 col-sm-3 col-xs-4">
-											<a href="#"><img class="img-responsive" src="images/galaxy-note-3.jpg"></a>
-										</li>
-										<li class="col-lg-3 col-sm-3 col-xs-4">
-											<a href="#"><img class="img-responsive" src="images/galaxy-note-4.jpg"></a>
-										</li>
-									</ul>
-								</div>
+							<div class="image" id ="bigLogo">
+							</div>
+							<div class="share well">
+								<strong style="margin-right: 13px;">Share :</strong>
+								<div class="bshare-custom"><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到微信" class="bshare-weixin"></a><a
+									 title="分享到Twitter" class="bshare-twitter"></a><a title="分享到Facebook" class="bshare-facebook"></a><a title="更多平台"
+									 class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div>
+								<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script>
+								<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="caption">
 								<div class="name">
-									<h3>Samsung/三星 GALAXY Note8 SM-N9500 6+256GB 官方正品 带Spen 全视曲面屏 4G智能手机</h3>
+									<h3 id = "subTitle"></h3>
 								</div>
 								<div class="info">
 									<ul>
-										<li>Brand: Phone</li>
-										<li>ID: 01239885</li>
+										<li id ="brandName">品牌: </li>
+										<li id ="productSn">商品Sn码: </li>
 									</ul>
 								</div>
-								<div class="price">￥5199<span>￥6998</span></div>
+								<div class="price" id ="price"><span id ="originalPrice"></span></div>
 								<div class="options">
-									AVAILABLE OPTIONS
+									属性选择
 									<select>
 										<option value="" selected>----Please Select----</option>
 										<option value="勃艮第红">勃艮第红</option>
@@ -221,61 +213,53 @@
 									</select>
 								</div>
 								<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-									 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-								<div class="well"><label>数量: </label> <input class="form-inline quantity" type="text" value="1"><a href="#"
-									 class="btn btn-2 ">ADD</a></div>
-								<div class="share well">
-									<strong style="margin-right: 13px;">Share :</strong>
-									<div class="bshare-custom"><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到微信" class="bshare-weixin"></a><a
-										 title="分享到Twitter" class="bshare-twitter"></a><a title="分享到Facebook" class="bshare-facebook"></a><a title="更多平台"
-										 class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div>
-									<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script>
-									<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
-
-								</div>
+									 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
+								<div class="well"><label>数量: </label> <input class="form-inline quantity" type="text" value="1" id ="productNumber"><a href="#"
+									 class="btn btn-2 " onclick ="addToCart()">添加到购物车</a><input type="hidden" id="productID"></div>
+								
 							</div>
 						</div>
 						<div class="clear"></div>
 					</div>
 					<div class="product-desc">
 						<ul class="nav nav-tabs">
-							<li class="active"><a href="#description">Description</a></li>
-							<li><a href="#review">Review</a></li>
+							<li class=""><a href="#description">Description</a></li>
+							<li class="active"><a href="#review">Review</a></li>
 						</ul>
 						<div class="tab-content">
-							<div id="description" class="tab-pane fade in active">
-								<h4>产品名称：Samsung/三星 Galaxy S8+...</h4>
-								<p>后置摄像头 1200万
-									摄像头类型 双摄像头（前后）
-									视频显示格式 MP4,M4V,3GP,3G2,WMV,ASF,AVI,FLV,MKV,WEBM</p>
+							<div id="description" class="tab-pane fade">
+								<h4 id="subTitle"></h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem. In fringilla mi in ligula. Pellentesque aliquam quam vel dolor. Nunc adipiscing. Sed quam odio, tempus ac, aliquam molestie, varius ac, tellus. Vestibulum ut nulla aliquam risus rutrum interdum. Pellentesque lorem. Curabitur sit amet erat quis risus feugiat viverra. Pellentesque augue justo, sagittis et, lacinia at, venenatis non, arcu. Nunc nec libero. In cursus dictum risus. Etiam tristique nisl a</p>
+								<h4>Sample Lorem Ipsum Text</h4>
+								<p>Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque aliquet lacus vitae pede. Nullam mollis dolor ac nisi. Phasellus sit amet urna. Praesent pellentesque sapien sed lacus. Donec lacinia odio in odio. In sit amet elit. Maecenas gravida interdum urna. Integer pretium, arcu vitae imperdiet facilisis, elit tellus tempor nisi, vel feugiat ante velit sit amet mauris. Vivamus arcu. Integer pharetra magna ac lacus. Aliquam vitae sapien in nibh vehicula auctor. Suspendisse leo mauris, pulvinar sed, tempor et, consequat ac, lacus. Proin velit. Nulla semper lobortis mauris. Duis urna erat, ornare et, imperdiet eu, suscipit sit amet, massa. Nulla nulla nisi, pellentesque at, egestas quis, fringilla eu, diam.</p>
 							</div>
-							<div id="review" class="tab-pane fade">
-								<div class="review-text">
-									<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								</div>
-								<div class="review-form">
-									<h4>Write a review</h4>
-									<form name="form1" id="ff" method="post" action="review.php">
-										<label>
-											<span>Enter your name:</span>
-											<input type="text" name="name" id="name" required>
-										</label>
-										<label>
-											<span>Your message here:</span>
-											<textarea name="message" id="message"></textarea>
-										</label>
-										<div class="text-right">
-											<input class="btn btn-default" type="reset" name="reset" value="Reset">
-											<input class="btn btn-default" type="submit" name="Submit" value="Submit">
-										</div>
-									</form>
-								</div>
+							<div id="review" class="tab-pane fade active in">
+							  <div class="review-text">
+								<p>您有什么好的建议可以评论发给我们哦 ó.ō </p>
+							  </div>
+							  <div class="review-form">
+								<h4>写评论</h4>
+								<form name="form1" id="ff" method="post" action="#">
+									<label>
+									<span>输入您要留言的名字:</span>
+									<input type="text" name="name" id="name" required="">
+									</label>
+									<label>
+									<span>输入您评论的信息:</span>
+									<textarea name="message" id="message"></textarea>
+									</label>
+									<div class="text-right">
+										<input class="btn btn-default" type="reset" name="reset" value="Reset">
+										<input class="btn btn-default" type="submit" name="Submit" value="Submit">
+									</div>
+								</form>
+							  </div>
 							</div>
 						</div>
 					</div>
 					<div class="product-related">
 						<div class="heading">
-							<h2>RELATED PRODUCTS</h2>
+							<h2>最近喜欢的商品</h2>
 						</div>
 						<div class="products">
 							<div class="col-lg-4 col-md-4 col-xs-12">
@@ -291,8 +275,6 @@
 											<h3><a href="/getProduct">三星S9</a></h3>
 										</div>
 										<div class="price">￥7122<span>￥8098</span></div>
-										<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-											 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 									</div>
 								</div>
 							</div>
@@ -309,8 +291,6 @@
 											<h3><a href="/getProduct">三星S8</a></h3>
 										</div>
 										<div class="price">￥122<span>￥98</span></div>
-										<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-											 class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 									</div>
 								</div>
 							</div>
@@ -327,9 +307,6 @@
 											<h3><a href="/getProduct">三星S7</a>
 										</div>
 										<div class="price">￥122<span>￥98</span></div>
-										<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
-											 class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span
-											 class="glyphicon glyphicon-star-empty"></span></div>
 									</div>
 								</div>
 							</div>
@@ -420,13 +397,37 @@
 				},
 				async: false,
 				success: function (data) {
-					alert(data.data)
 					if (data.code == 200) {
-						alert("更新成功");
-						getMemberCart();
+						var product = data.data;
+						$("#bigLogo").html('<img src="'+product.pic+'" />');
+						$("#brandName").append(product.brandName);
+						$("#subTitle").append(product.subTitle);
+						$("#productSn").append(product.productSn);
+						$("#price").append("￥"+product.price);
+						$("#originalPrice").append("￥"+product.originalPrice);
+						$("#productCategoryName").append(product.productCategoryName);
 					} else {
 						alert("API错误")
 					}
+				}
+			});
+		}
+
+		function addToCart(){
+			var proId = sessionStorage.getItem("proId");
+			$.ajax({
+				type: "POST",
+				url: "/cart/add",
+				data:{
+					id: proId
+				},
+				async: false,
+				success: function (data) {
+					if(data ==null){
+						alert("系统错误")
+					}
+					alert("加入购物车成功！");
+					
 				}
 			});
 		}
