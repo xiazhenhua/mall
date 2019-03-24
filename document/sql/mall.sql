@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80013
 File Encoding         : 65001
 
-Date: 2019-03-13 22:05:11
+Date: 2019-03-24 21:56:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -103,7 +103,7 @@ CREATE TABLE `cms_prefrence_area_product_relation` (
   `prefrence_area_id` bigint(20) DEFAULT NULL,
   `product_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='优选专区和产品关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='优选专区和产品关系表';
 
 -- ----------------------------
 -- Records of cms_prefrence_area_product_relation
@@ -119,6 +119,7 @@ INSERT INTO `cms_prefrence_area_product_relation` VALUES ('24', '1', '23');
 INSERT INTO `cms_prefrence_area_product_relation` VALUES ('25', '1', '37');
 INSERT INTO `cms_prefrence_area_product_relation` VALUES ('26', '2', '37');
 INSERT INTO `cms_prefrence_area_product_relation` VALUES ('27', '1', '45');
+INSERT INTO `cms_prefrence_area_product_relation` VALUES ('28', '1', '47');
 
 -- ----------------------------
 -- Table structure for `cms_subject`
@@ -320,7 +321,7 @@ CREATE TABLE `oms_cart_item` (
   `product_sn` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `product_attr` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='购物车表';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='购物车表';
 
 -- ----------------------------
 -- Records of oms_cart_item
@@ -330,6 +331,9 @@ INSERT INTO `oms_cart_item` VALUES ('13', '27', '98', '1', '3', '2699.00', '黑�
 INSERT INTO `oms_cart_item` VALUES ('14', '28', '102', '1', '1', '649.00', '金色', '16G', null, null, '红米5A', '8天超长待机，137g轻巧机身，高通骁龙处理器小米6X低至1299，点击抢购', '201808270028001', 'windir', '2018-08-27 17:18:02', null, '0', '19', null, null, null);
 INSERT INTO `oms_cart_item` VALUES ('15', '28', '103', '1', '1', '699.00', '金色', '32G', null, null, '红米5A', '8天超长待机，137g轻巧机身，高通骁龙处理器小米6X低至1299，点击抢购', '201808270028001', 'windir', '2018-08-28 10:22:45', null, '0', '19', null, null, null);
 INSERT INTO `oms_cart_item` VALUES ('16', '29', '106', '1', '1', '5499.00', '金色', '32G', null, null, 'Apple iPhone 8 Plus', '【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。', '201808270029001', 'windir', '2018-08-28 10:50:50', null, '0', '19', null, null, null);
+INSERT INTO `oms_cart_item` VALUES ('17', '36', null, '5', '1', '3599.00', null, null, null, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/1879e5f23c7bef95e_840_840.png', '一加6T', '一加智能手机', null, 'lisi', '2019-03-16 09:39:43', '2019-03-20 21:46:34', '1', '29', null, null, null);
+INSERT INTO `oms_cart_item` VALUES ('18', '27', null, '5', '3', '2699.00', null, null, null, 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '小米8 全面屏智能手机', '骁龙845处理器，红外人脸解锁，AI变焦双摄，AI语音助手小米6X低至1299，点击抢购', null, 'lisi', '2019-03-16 09:39:47', null, '1', '19', null, null, null);
+INSERT INTO `oms_cart_item` VALUES ('19', '48', null, '5', '1', '8499.00', null, null, null, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/5bfbc0e5N263aeb9c.jpg', '联想(Lenovo)拯救者Y7000P', 'Y7000P英特尔酷睿 i7 15.6英寸高色域游戏笔记本电脑(i7-8750H 8G 512G GTX1060 144Hz)', null, 'lisi', '2019-03-23 23:42:48', null, '0', '56', null, null, null);
 
 -- ----------------------------
 -- Table structure for `oms_company_address`
@@ -783,7 +787,7 @@ CREATE TABLE `pms_member_price` (
   `member_price` decimal(10,2) DEFAULT NULL COMMENT '会员价格',
   `member_level_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='商品会员价格表';
+) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='商品会员价格表';
 
 -- ----------------------------
 -- Records of pms_member_price
@@ -859,6 +863,12 @@ INSERT INTO `pms_member_price` VALUES ('230', '45', '3', null, '钻石会员');
 INSERT INTO `pms_member_price` VALUES ('231', '46', '1', null, '黄金会员');
 INSERT INTO `pms_member_price` VALUES ('232', '46', '2', null, '白金会员');
 INSERT INTO `pms_member_price` VALUES ('233', '46', '3', null, '钻石会员');
+INSERT INTO `pms_member_price` VALUES ('234', '47', '1', null, '黄金会员');
+INSERT INTO `pms_member_price` VALUES ('235', '47', '2', null, '白金会员');
+INSERT INTO `pms_member_price` VALUES ('236', '47', '3', null, '钻石会员');
+INSERT INTO `pms_member_price` VALUES ('237', '48', '1', null, '黄金会员');
+INSERT INTO `pms_member_price` VALUES ('238', '48', '2', null, '白金会员');
+INSERT INTO `pms_member_price` VALUES ('239', '48', '3', null, '钻石会员');
 
 -- ----------------------------
 -- Table structure for `pms_product`
@@ -908,7 +918,7 @@ CREATE TABLE `pms_product` (
   `brand_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '品牌名称',
   `product_category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '商品分类名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='商品信息';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='商品信息';
 
 -- ----------------------------
 -- Records of pms_product
@@ -923,8 +933,10 @@ INSERT INTO `pms_product` VALUES ('37', '6', '55', '0', '11', '小米互联网�
 INSERT INTO `pms_product` VALUES ('38', '2', '32', '0', '6', '三星S10', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/4d23a004ab9ecdda.jpg', '8889', '0', '1', '1', '0', '0', '199', '0', '10999.00', null, '0', '0', '0', '3D超声波屏下指纹超感官全视屏骁龙855双卡双待全网通', '', '10999.00', '1000', '0', '人民币', '2100.00', '1', '', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/75e157ed82cddff5.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/7abac18ca0e45f30.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/f29e27f46bc990e1.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/75e157ed82cddff5.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/4d23a004ab9ecdda.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/7abac18ca0e45f30.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/f29e27f46bc990e1.jpg\" /></p>', '', null, null, '0', '0', '三星', '影音娱乐');
 INSERT INTO `pms_product` VALUES ('43', '70', '56', '0', '10', '惠普（HP）暗影精灵', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b13bbcfNce388ace.jpg', '50845h8096', '0', '1', '0', '1', '0', '197', '0', '6299.00', null, '0', '0', '0', '暗影精灵4代 15.6英寸游戏笔记本电脑（i5-8300H 8G 128G+1TB GTX1050Ti 4G独显 IPS FHD）', '暗影精灵4代 15.6英寸游戏笔记本电脑（i5-8300H 8G 128G+1TB GTX1050Ti 4G独显 IPS FHD）', '6599.00', '199', '0', '个', '4860.00', '0', '', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b0e4c65N351eb7ea.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b0e4c67N449b51ae.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/212da9c8e0637624.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b0e4c65N351eb7ea.jpg\" /></p>', '', null, null, '0', '0', '惠普', '');
 INSERT INTO `pms_product` VALUES ('44', '65', '56', '0', '10', '联想(Lenovo)拯救者', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b13bbcfNce388ace.jpg', '50807y0-8', '0', '1', '0', '1', '0', '280', '0', '6199.00', null, '0', '0', '0', '拯救者Y7000英特尔酷睿i5 15.6英寸高色域游戏笔记本电脑( i5-8300H 8G 512G GTX1050Ti 72% NTSC)', '拯救者Y7000英特尔酷睿i5 15.6英寸高色域游戏笔记本电脑( i5-8300H 8G 512G GTX1050Ti 72% NTSC)', '6599.00', '290', '0', '个', '4682.00', '1', '2,3', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5934467dc526ca7c.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5bc82201Nc7b57537.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5934467dc526ca7c.jpg\" /></p>', '', null, null, '0', '0', '联想', '');
-INSERT INTO `pms_product` VALUES ('45', '51', '30', '0', '6', 'Apple AirPods 蓝牙无线耳机', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b16369dN3ff71efd.jpg', 'tt5867894', '0', '1', '1', '1', '0', '500', '0', '1499.00', null, '0', '0', '0', 'Apple AirPods 蓝牙无线耳机', 'Apple AirPods 蓝牙无线耳机', '1699.00', '458', '0', '个', '100.00', '0', '1,3', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5853458bN0ba95462.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b16369dN94b6ebe5.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/58534587N53c62548.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5853458bN0ba95462.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/58534587N53c62548.jpg\" /></p>', '', null, null, '0', '0', '苹果', '手机配件');
+INSERT INTO `pms_product` VALUES ('45', '51', '30', '0', '6', 'Apple AirPods 蓝牙无线耳机', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b16369dN3ff71efd.jpg', 'tt5867894', '0', '1', '1', '1', '0', '500', '0', '1499.00', null, '0', '0', '0', 'Apple AirPods 蓝牙无线耳机', 'Apple AirPods 蓝牙无线耳机', '1699.00', '458', '0', '个', '100.00', '0', '1,3', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5853458bN0ba95462.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5b16369dN94b6ebe5.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/58534587N53c62548.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5853458bN0ba95462.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/58534587N53c62548.jpg\" /></p>', '', null, null, '0', '0', '苹果', '智能手机');
 INSERT INTO `pms_product` VALUES ('46', '2', '33', '0', '6', '三星固态硬盘', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5ae2f18eNc6055d9a.jpg', 't65789h', '0', '1', '0', '1', '0', '100', '0', '1399.00', '1299.00', '0', '0', '0', '三星(SAMSUNG) 970 PRO 512G NVMe M.2 SSD固态硬盘（MZ-V7P512BW）', '三星(SAMSUNG) 970 PRO 512G NVMe M.2 SSD固态硬盘（MZ-V7P512BW）', '1499.00', '57', '0', '个', '29.00', '0', '1,2', '', '', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5ae2f18fNe825fd1a.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5ae2f18fN8385ee2b.jpg', '', '', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5ae2f18eNc6055d9a.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190312/5ae2f18fN8385ee2b.jpg\" /></p>', '', '2019-03-20 00:00:00', '2019-03-29 21:20:32', '0', '1', '三星', '数码配件');
+INSERT INTO `pms_product` VALUES ('47', '51', '30', '0', '6', 'Apple iPhone X', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/微信图片_20190322230257.png', '7889051', '0', '1', '1', '1', '0', '999', '0', '6199.00', null, '0', '100', '0', ' (A1865) 64GB 深空灰色 移动联通电信4G手机', 'Apple iPhone X (A1865) 64GB 深空灰色 移动联通电信4G手机', '7199.00', '20', '0', '台', '300.00', '0', '1,2,3', 'iPhone X、全面屏', 'Apple iPhone X (A1865) 64GB 深空灰色 移动联通电信4G手机，最值的选择', '', 'Apple iPhone X (A1865) 64GB 深空灰色 移动联通电信4G手机', 'Apple iPhone X (A1865) 64GB 深空灰色 移动联通电信4G手机，最值的选择', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/微信图片_20190322230257.png\" /></p>', '', null, null, '0', '0', '苹果', '智能手机');
+INSERT INTO `pms_product` VALUES ('48', '65', '56', '0', '10', '联想(Lenovo)拯救者Y7000P', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/5bfbc0e5N263aeb9c.jpg', '7005y5420', '0', '1', '1', '1', '0', '500', '0', '8499.00', null, '0', '0', '0', 'Y7000P英特尔酷睿 i7 15.6英寸高色域游戏笔记本电脑(i7-8750H 8G 512G GTX1060 144Hz)', '联想(Lenovo)拯救者Y7000P英特尔酷睿 i7 15.6英寸高色域游戏笔记本电脑(i7-8750H 8G 512G GTX1060 144Hz)\n屏幕规格\n15.6英寸\n显示比例\n宽屏16：9\n物理分辨率\n1920×1080\n屏幕类型\nIPS', '8999.00', '100', '0', '台', '4200.00', '0', '1,2,3', '1066', '色域：72%NTSC', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/7eb2a4ca90ee53d1.jpg,http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/56e92bcf14c511fe.jpg', '联想(Lenovo)拯救者Y7000P英特尔酷睿 i7 15.6英寸高色域游戏笔记本电脑(i7-8750H 8G 512G GTX1060 144Hz)', '商品毛重：4.18kg、显存容量：6G、刷新率：144HZ、游戏性能：吃鸡性能，发烧级', '<p><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/5bfbc0e5N263aeb9c.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/56e92bcf14c511fe.jpg\" /><img class=\"wscnph\" src=\"http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/7eb2a4ca90ee53d1.jpg\" /></p>', '', null, null, '0', '0', '联想', '');
 
 -- ----------------------------
 -- Table structure for `pms_product_attribute`
@@ -944,7 +956,7 @@ CREATE TABLE `pms_product_attribute` (
   `hand_add_status` int(1) DEFAULT NULL COMMENT '是否支持手动新增；0->不支持；1->支持',
   `type` int(1) DEFAULT NULL COMMENT '属性的类型；0->规格；1->参数',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='商品属性参数表';
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='商品属性参数表';
 
 -- ----------------------------
 -- Records of pms_product_attribute
@@ -977,30 +989,13 @@ INSERT INTO `pms_product_attribute` VALUES ('45', '3', '屏幕尺寸', '0', '0',
 INSERT INTO `pms_product_attribute` VALUES ('46', '3', '网络', '0', '1', '3G,4G', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('47', '3', '系统', '0', '1', 'Android,IOS', '0', '0', '0', '0', '0', '1');
 INSERT INTO `pms_product_attribute` VALUES ('48', '3', '电池容量', '0', '0', '', '0', '0', '0', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('49', '6', '拍照手机', '2', '0', '4000W拍照', '1', '0', '1', '0', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('51', '11', '电视', '0', '0', '超薄电视、全面屏电视、人工智能电视、OLED电视、曲面电视、4K超高清、量子点电视、商用电视', '2', '1', '1', '1', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('52', '11', '空调', '1', '1', '节能空调、悬挂式空调、柜式空调、中央空调、', '1', '1', '1', '0', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('53', '11', '洗衣机', '2', '0', '', '3', '1', '2', '0', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('54', '11', '冰箱', '1', '1', '对开门冰消、十字对开门、多门冰箱、三门冰箱、双门冰箱、单门冰箱、冷柜/冰吧、红酒柜', '1', '0', '1', '1', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('55', '11', '厨卫大电', '1', '1', '油烟机、燃气灶、消毒柜、洗碗机、电热水器、燃气热水器、集成灶', '4', '0', '1', '1', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('56', '11', '厨卫小电', '2', '1', '电饭煲、榨汁机、微波炉、电水壶、养生壶、电压力锅、电磁炉、烤箱、豆浆机、料理机、咖啡机、电炖锅、电饼铛、面包机、煮蛋器、电热饭盒、酸奶机', '5', '0', '0', '1', '1', '0');
-INSERT INTO `pms_product_attribute` VALUES ('57', '11', '屏幕尺寸', '2', '0', '', '0', '1', '1', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('58', '11', '品牌', '2', '0', '', '0', '0', '2', '1', '1', '1');
-INSERT INTO `pms_product_attribute` VALUES ('59', '11', '品牌类型', '2', '1', '国产品牌、合资品牌、商业显示品牌、互联网品牌', '2', '0', '0', '0', '1', '1');
-INSERT INTO `pms_product_attribute` VALUES ('60', '11', '能效等级', '1', '1', '一级、二级', '2', '0', '0', '1', '1', '1');
-INSERT INTO `pms_product_attribute` VALUES ('61', '11', '产品匹数', '1', '1', '3P、5P、5P以上', '0', '0', '1', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('62', '11', '空调类别', '1', '1', '悬挂式空调、多联机、立柜式空调、风管机', '1', '0', '0', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('63', '11', '产品类型', '0', '1', '母婴洗、脱水机、烘干机、滚筒、迷你洗衣机、双缸、洗烘一体、波轮', '2', '0', '0', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('64', '11', '电机类型', '2', '1', '定频、变频', '1', '0', '1', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('65', '11', '洗涤容量', '1', '1', '5kg及以下、6Kg及以上', '3', '0', '0', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('66', '11', '门款式', '1', '1', '多开门、双门、单门、三门、十字对开门', '1', '0', '1', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('67', '11', '制冷方式', '1', '1', '直冷、风冷、风直冷', '2', '0', '1', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('68', '11', '总容积', '0', '1', '100升及以下、101-200升、201-250升、251-350升、400-500升、500-600升、600升及以上', '3', '0', '0', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('69', '11', '加热方式', '0', '0', '底盘加热、IH电磁加热、三维立体加热、多段IH加热、电热管加热', '4', '0', '1', '0', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('70', '11', '内盖板材质', '2', '1', '铝合金、不锈钢', '6', '0', '0', '1', '1', '1');
-INSERT INTO `pms_product_attribute` VALUES ('71', '10', '品牌', '2', '0', '戴尔、联想、惠普、神舟、华硕、微星、机械革命、外星人、', '8', '0', '1', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('73', '10', '屏幕尺寸', '1', '0', '13英寸及以下、13.3英寸、14英寸、15英寸、15.4英寸、15.6英寸、16.1英寸、17.3英寸、18.4英寸', '5', '0', '2', '1', '0', '1');
-INSERT INTO `pms_product_attribute` VALUES ('74', '10', '处理器', '1', '1', 'Intel i5标准电压版、Intel i7标准电压版、Intel i9标准电压版、AMD Ryzen、桌面级处理器', '7', '0', '1', '1', '1', '1');
+INSERT INTO `pms_product_attribute` VALUES ('75', '6', '颜色', '1', '1', '银色,深空灰色', '1', '0', '0', '0', '1', '0');
+INSERT INTO `pms_product_attribute` VALUES ('76', '6', '内存', '1', '1', '64G,256G', '100', '0', '1', '1', '1', '1');
+INSERT INTO `pms_product_attribute` VALUES ('77', '10', 'cpu', '0', '1', 'i5-8300H,i7-8750H,i5-8250U,i7-8550U', '1', '0', '1', '0', '1', '0');
+INSERT INTO `pms_product_attribute` VALUES ('78', '10', '显卡', '1', '1', '1070Max 8G,1060Max 3G,1060Max G,1050 2G,1050 4G,1050Ti 4G', '18', '0', '0', '0', '1', '1');
+INSERT INTO `pms_product_attribute` VALUES ('79', '10', '内存', '1', '1', '8G,16G', '1', '0', '1', '1', '1', '0');
+INSERT INTO `pms_product_attribute` VALUES ('80', '10', '硬盘', '0', '0', '128G SSD  +  1T,256G SSD,256G SSD  +  1T,512G SSD', '2', '0', '0', '0', '1', '0');
+INSERT INTO `pms_product_attribute` VALUES ('81', '11', '颜色', '0', '0', '', '1', '0', '0', '0', '1', '0');
 
 -- ----------------------------
 -- Table structure for `pms_product_attribute_category`
@@ -1017,9 +1012,9 @@ CREATE TABLE `pms_product_attribute_category` (
 -- ----------------------------
 -- Records of pms_product_attribute_category
 -- ----------------------------
-INSERT INTO `pms_product_attribute_category` VALUES ('6', '手机', '1', '0');
-INSERT INTO `pms_product_attribute_category` VALUES ('10', '笔记本电脑', '0', '3');
-INSERT INTO `pms_product_attribute_category` VALUES ('11', '家用电器', '6', '14');
+INSERT INTO `pms_product_attribute_category` VALUES ('6', '手机', '1', '1');
+INSERT INTO `pms_product_attribute_category` VALUES ('10', '笔记本电脑', '3', '1');
+INSERT INTO `pms_product_attribute_category` VALUES ('11', '家用电器', '1', '0');
 
 -- ----------------------------
 -- Table structure for `pms_product_attribute_value`
@@ -1031,7 +1026,7 @@ CREATE TABLE `pms_product_attribute_value` (
   `product_attribute_id` bigint(20) DEFAULT NULL,
   `value` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '手动添加规格或参数的值，参数单值，规格有多个时以逗号隔开',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='存储产品参数信息的表';
+) ENGINE=InnoDB AUTO_INCREMENT=283 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='存储产品参数信息的表';
 
 -- ----------------------------
 -- Records of pms_product_attribute_value
@@ -1130,6 +1125,12 @@ INSERT INTO `pms_product_attribute_value` VALUES ('273', '43', '50', null);
 INSERT INTO `pms_product_attribute_value` VALUES ('274', '44', '71', 'Lenovo');
 INSERT INTO `pms_product_attribute_value` VALUES ('275', '44', '74', 'Intel i5标准电压版、Intel i7标准电压版、Intel i9标准电压版、AMD Ryzen、桌面级处理器');
 INSERT INTO `pms_product_attribute_value` VALUES ('276', '44', '73', '15.5');
+INSERT INTO `pms_product_attribute_value` VALUES ('277', '47', '75', '红色');
+INSERT INTO `pms_product_attribute_value` VALUES ('278', '47', '76', '256G');
+INSERT INTO `pms_product_attribute_value` VALUES ('279', '48', '80', '512G SSD');
+INSERT INTO `pms_product_attribute_value` VALUES ('280', '48', '77', 'I7-8750H,i5-8300H');
+INSERT INTO `pms_product_attribute_value` VALUES ('281', '48', '79', '8G');
+INSERT INTO `pms_product_attribute_value` VALUES ('282', '48', '78', '1050Ti 4G');
 
 -- ----------------------------
 -- Table structure for `pms_product_category`
@@ -1149,40 +1150,32 @@ CREATE TABLE `pms_product_category` (
   `keywords` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT '描述',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品分类';
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品分类';
 
 -- ----------------------------
 -- Records of pms_product_category
 -- ----------------------------
 INSERT INTO `pms_product_category` VALUES ('2', '0', '手机数码', '0', '100', '件', '1', '1', '1', null, '手机数码', '手机数码');
 INSERT INTO `pms_product_category` VALUES ('3', '0', '电脑整机', '0', '100', '件', '1', '1', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/subject_cate_jiadian.png', '电脑整机', '电脑整机');
-INSERT INTO `pms_product_category` VALUES ('7', '1', '外套', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_waitao.png', '外套', '外套');
-INSERT INTO `pms_product_category` VALUES ('8', '1', 'T恤', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_tshirt.png', 'T恤', 'T恤');
-INSERT INTO `pms_product_category` VALUES ('9', '1', '休闲裤', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_xiuxianku.png', '休闲裤', '休闲裤');
-INSERT INTO `pms_product_category` VALUES ('10', '1', '牛仔裤', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_niuzaiku.png', '牛仔裤', '牛仔裤');
-INSERT INTO `pms_product_category` VALUES ('11', '1', '衬衫', '1', '100', '件', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_chenshan.png', '衬衫', '衬衫分类');
 INSERT INTO `pms_product_category` VALUES ('13', '12', '家电子分类1', '1', '1', 'string', '0', '1', '0', 'string', 'string', 'string');
 INSERT INTO `pms_product_category` VALUES ('14', '12', '家电子分类2', '1', '1', 'string', '0', '1', '0', 'string', 'string', 'string');
-INSERT INTO `pms_product_category` VALUES ('29', '1', '男鞋', '1', '0', '', '0', '0', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_xie.png', '', '');
-INSERT INTO `pms_product_category` VALUES ('30', '2', '手机配件', '1', '0', '件', '1', '1', '10', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_peijian.png', '手机配件', '手机配件');
+INSERT INTO `pms_product_category` VALUES ('30', '2', '智能手机', '1', '0', '件', '1', '1', '10', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_peijian.png', '手机配件', '手机配件');
 INSERT INTO `pms_product_category` VALUES ('31', '2', '摄影摄像', '1', '0', '个', '1', '1', '8', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_sheying.png', '', '');
 INSERT INTO `pms_product_category` VALUES ('32', '2', '影音娱乐', '1', '0', '', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_yule.png', '', '');
 INSERT INTO `pms_product_category` VALUES ('33', '2', '数码配件', '1', '0', '', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_yule.png', '', '');
 INSERT INTO `pms_product_category` VALUES ('34', '2', '智能设备', '1', '0', '', '1', '1', '0', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/product_cate_zhineng.png', '', '');
 INSERT INTO `pms_product_category` VALUES ('43', '4', '笔记本整机', '1', '0', '', '1', '1', '0', '', '笔记本整机', '笔记本整机');
-INSERT INTO `pms_product_category` VALUES ('44', '4', '灯饰照明', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('45', '4', '五金工具', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('46', '4', '卧室家具', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('47', '4', '客厅家具', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('48', '5', '全新整车', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('49', '5', '车载电器', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('50', '5', '维修保养', '1', '0', '', '1', '1', '0', '', '', '');
-INSERT INTO `pms_product_category` VALUES ('51', '5', '汽车装饰', '1', '0', '', '1', '1', '0', '', '', '');
 INSERT INTO `pms_product_category` VALUES ('52', '0', '外设产品', '0', '0', '个', '1', '1', '3', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/u=2247058343,3295009378&fm=26&gp=0.jpg', '外设产品', '鼠标，键盘，耳机');
 INSERT INTO `pms_product_category` VALUES ('53', '2', '电子教育', '1', '0', '件', '1', '1', '6', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190308/timg (13).jpg', '', '');
 INSERT INTO `pms_product_category` VALUES ('54', '0', '家用电器', '0', '0', '100', '1', '1', '0', '', '', '');
 INSERT INTO `pms_product_category` VALUES ('55', '54', '电视机', '1', '0', '件', '1', '1', '10', '', '4K电视', '电视机');
 INSERT INTO `pms_product_category` VALUES ('56', '3', '游戏笔记本', '1', '0', '件', '1', '1', '10', '', '游戏本', '游戏本');
+INSERT INTO `pms_product_category` VALUES ('57', '52', '游戏鼠标', '1', '0', '个', '1', '1', '1', '', '游戏鼠标、外设产品', '游戏鼠标、外设产品');
+INSERT INTO `pms_product_category` VALUES ('58', '52', '键盘', '1', '0', '个', '1', '1', '1', '', '键盘', '键盘');
+INSERT INTO `pms_product_category` VALUES ('59', '3', '工作站', '1', '0', '台', '1', '1', '1777', '', '工作站', '工作站');
+INSERT INTO `pms_product_category` VALUES ('60', '3', '台式机', '1', '0', '台式机', '1', '1', '13556', '', '台式机', '台式机');
+INSERT INTO `pms_product_category` VALUES ('61', '3', '一体机', '1', '0', '一体机', '1', '1', '145', '', '一体机', '一体机');
+INSERT INTO `pms_product_category` VALUES ('62', '54', '冰箱', '1', '0', '台', '1', '1', '142', '', '冰箱', '冰箱');
 
 -- ----------------------------
 -- Table structure for `pms_product_category_attribute_relation`
@@ -1193,7 +1186,7 @@ CREATE TABLE `pms_product_category_attribute_relation` (
   `product_category_id` bigint(20) DEFAULT NULL,
   `product_attribute_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）';
 
 -- ----------------------------
 -- Records of pms_product_category_attribute_relation
@@ -1209,6 +1202,8 @@ INSERT INTO `pms_product_category_attribute_relation` VALUES ('13', '55', '59');
 INSERT INTO `pms_product_category_attribute_relation` VALUES ('14', '56', '74');
 INSERT INTO `pms_product_category_attribute_relation` VALUES ('15', '56', '73');
 INSERT INTO `pms_product_category_attribute_relation` VALUES ('16', '56', '72');
+INSERT INTO `pms_product_category_attribute_relation` VALUES ('17', '59', '78');
+INSERT INTO `pms_product_category_attribute_relation` VALUES ('18', '60', '78');
 
 -- ----------------------------
 -- Table structure for `pms_product_full_reduction`
@@ -1220,7 +1215,7 @@ CREATE TABLE `pms_product_full_reduction` (
   `full_price` decimal(10,2) DEFAULT NULL,
   `reduce_price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品满减表(只针对同商品)';
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品满减表(只针对同商品)';
 
 -- ----------------------------
 -- Records of pms_product_full_reduction
@@ -1257,6 +1252,8 @@ INSERT INTO `pms_product_full_reduction` VALUES ('70', '43', '0.00', '0.00');
 INSERT INTO `pms_product_full_reduction` VALUES ('71', '44', '0.00', '0.00');
 INSERT INTO `pms_product_full_reduction` VALUES ('72', '45', '0.00', '0.00');
 INSERT INTO `pms_product_full_reduction` VALUES ('73', '46', '0.00', '0.00');
+INSERT INTO `pms_product_full_reduction` VALUES ('74', '47', '0.00', '0.00');
+INSERT INTO `pms_product_full_reduction` VALUES ('75', '48', '0.00', '0.00');
 
 -- ----------------------------
 -- Table structure for `pms_product_ladder`
@@ -1269,7 +1266,7 @@ CREATE TABLE `pms_product_ladder` (
   `discount` decimal(10,2) DEFAULT NULL COMMENT '折扣',
   `price` decimal(10,2) DEFAULT NULL COMMENT '折后价格',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品阶梯价格表(只针对同商品)';
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='产品阶梯价格表(只针对同商品)';
 
 -- ----------------------------
 -- Records of pms_product_ladder
@@ -1281,10 +1278,6 @@ INSERT INTO `pms_product_ladder` VALUES ('4', '29', '3', '0.60', '3300.00');
 INSERT INTO `pms_product_ladder` VALUES ('5', '34', '3', '0.85', '3400.00');
 INSERT INTO `pms_product_ladder` VALUES ('6', '36', '3', '0.90', '3240.00');
 INSERT INTO `pms_product_ladder` VALUES ('70', '37', '100', '0.80', '2960.00');
-INSERT INTO `pms_product_ladder` VALUES ('75', '43', '0', '0.00', '0.00');
-INSERT INTO `pms_product_ladder` VALUES ('76', '44', '0', '0.00', '0.00');
-INSERT INTO `pms_product_ladder` VALUES ('77', '45', '0', '0.00', '0.00');
-INSERT INTO `pms_product_ladder` VALUES ('78', '46', '0', '0.00', '0.00');
 
 -- ----------------------------
 -- Table structure for `pms_product_operate_log`
@@ -1349,7 +1342,7 @@ CREATE TABLE `pms_sku_stock` (
   `promotion_price` decimal(10,2) DEFAULT NULL COMMENT '单品促销价格',
   `lock_stock` int(11) DEFAULT '0' COMMENT '锁定库存',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='sku的库存';
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='sku的库存';
 
 -- ----------------------------
 -- Records of pms_sku_stock
@@ -1388,6 +1381,8 @@ INSERT INTO `pms_sku_stock` VALUES ('111', '26', '201806070026002', '3999.00', '
 INSERT INTO `pms_sku_stock` VALUES ('112', '26', '201806070026003', '3788.00', '500', null, '银色', '16G', null, null, null, null, '0');
 INSERT INTO `pms_sku_stock` VALUES ('113', '26', '201806070026004', '3999.00', '500', null, '银色', '32G', null, null, null, null, '0');
 INSERT INTO `pms_sku_stock` VALUES ('114', '37', '2394234', '7888.00', '100', '20', '方法', null, null, null, null, null, '0');
+INSERT INTO `pms_sku_stock` VALUES ('115', '47', '5454685yy', '6599.00', '10', '3', '红色', null, null, 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/微信图片_20190322230257.png', null, null, '0');
+INSERT INTO `pms_sku_stock` VALUES ('116', '48', 'i5Y830512120', '7299.00', '300', '10', '512G SSD', 'i5-8300H', '8G', 'http://e-mall.oss-cn-beijing.aliyuncs.com/e-mall/img/20190322/5bfbc0e5N263aeb9c.jpg', null, null, '0');
 
 -- ----------------------------
 -- Table structure for `sms_coupon`
@@ -1676,9 +1671,9 @@ CREATE TABLE `sms_home_advertise` (
 INSERT INTO `sms_home_advertise` VALUES ('2', '夏季大热促销', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/xiaomi.jpg', '2018-11-01 14:01:37', '2018-11-15 14:01:37', '0', '0', '0', null, '夏季大热促销', '0');
 INSERT INTO `sms_home_advertise` VALUES ('3', '夏季大热促销1', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/5ac1bf58Ndefaac16.jpg', '2018-11-13 14:01:37', '2018-11-13 14:01:37', '0', '0', '0', null, '夏季大热促销1', '0');
 INSERT INTO `sms_home_advertise` VALUES ('4', '夏季大热促销2', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5a9d248cN071f4959.jpg', '2018-11-13 14:01:37', '2018-11-13 14:01:37', '1', '0', '0', null, '夏季大热促销2', '0');
-INSERT INTO `sms_home_advertise` VALUES ('9', '电影推荐广告', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20181113/movie_ad.jpg', '2018-11-01 00:00:00', '2018-11-24 00:00:00', '1', '0', '0', 'www.baidu.com', '电影推荐广告', '100');
-INSERT INTO `sms_home_advertise` VALUES ('10', '汽车促销广告', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20181113/car_ad.jpg', '2018-11-13 00:00:00', '2018-11-24 00:00:00', '1', '0', '0', 'xxx', null, '99');
-INSERT INTO `sms_home_advertise` VALUES ('11', '汽车推荐广告', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20181113/car_ad2.jpg', '2018-11-13 00:00:00', '2018-11-30 00:00:00', '1', '0', '0', 'xxx', null, '98');
+INSERT INTO `sms_home_advertise` VALUES ('9', '折扣推荐广告', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20181113/movie_ad.jpg', '2018-11-01 00:00:00', '2018-11-24 00:00:00', '1', '0', '0', 'www.baidu.com', '电影推荐广告', '100');
+INSERT INTO `sms_home_advertise` VALUES ('10', '品牌促销广告', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20181113/car_ad.jpg', '2018-11-13 00:00:00', '2018-11-24 00:00:00', '1', '0', '0', 'xxx', null, '99');
+INSERT INTO `sms_home_advertise` VALUES ('11', '新品推荐广告', '1', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20181113/car_ad2.jpg', '2018-11-13 00:00:00', '2018-11-30 00:00:00', '1', '0', '0', 'xxx', null, '98');
 
 -- ----------------------------
 -- Table structure for `sms_home_brand`
@@ -1700,7 +1695,6 @@ INSERT INTO `sms_home_brand` VALUES ('1', '1', '万和', '1', '200');
 INSERT INTO `sms_home_brand` VALUES ('2', '2', '三星', '1', '0');
 INSERT INTO `sms_home_brand` VALUES ('6', '6', '小米', '1', '300');
 INSERT INTO `sms_home_brand` VALUES ('8', '5', '方太', '1', '100');
-INSERT INTO `sms_home_brand` VALUES ('32', '50', '海澜之家', '1', '0');
 INSERT INTO `sms_home_brand` VALUES ('33', '51', '苹果', '1', '0');
 INSERT INTO `sms_home_brand` VALUES ('35', '3', '华为', '1', '0');
 INSERT INTO `sms_home_brand` VALUES ('36', '4', '格力', '1', '0');
@@ -1731,7 +1725,6 @@ INSERT INTO `sms_home_new_product` VALUES ('8', '26', '华为 HUAWEI P20 ', '1',
 INSERT INTO `sms_home_new_product` VALUES ('9', '27', '小米8 全面屏游戏智能手机 6GB+64GB 黑色 全网通4G 双卡双待', '1', '0');
 INSERT INTO `sms_home_new_product` VALUES ('10', '28', '小米 红米5A 全网通版 3GB+32GB 香槟金 移动联通电信4G手机 双卡双待', '1', '0');
 INSERT INTO `sms_home_new_product` VALUES ('11', '29', 'Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机', '1', '0');
-INSERT INTO `sms_home_new_product` VALUES ('12', '30', 'HLA海澜之家简约动物印花短袖T恤', '1', '0');
 
 -- ----------------------------
 -- Table structure for `sms_home_recommend_product`
@@ -1772,7 +1765,6 @@ CREATE TABLE `sms_home_recommend_subject` (
 -- ----------------------------
 INSERT INTO `sms_home_recommend_subject` VALUES ('15', '2', '大牌手机低价秒', '1', '0');
 INSERT INTO `sms_home_recommend_subject` VALUES ('16', '3', '晓龙845新品上市', '1', '0');
-INSERT INTO `sms_home_recommend_subject` VALUES ('17', '4', '夏天应该穿什么', '1', '0');
 INSERT INTO `sms_home_recommend_subject` VALUES ('18', '5', '夏季精选', '0', '100');
 INSERT INTO `sms_home_recommend_subject` VALUES ('19', '6', '品牌手机降价', '1', '0');
 
@@ -1798,7 +1790,7 @@ CREATE TABLE `ums_admin` (
 -- Records of ums_admin
 -- ----------------------------
 INSERT INTO `ums_admin` VALUES ('1', 'test', '202cb962ac59075b964b07152d234b70', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180607/timg.jpg', null, '测试账号', null, '2018-09-29 13:55:30', '2018-09-29 13:55:39', '1');
-INSERT INTO `ums_admin` VALUES ('3', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/170157_yIl3_1767531.jpg', 'admin@163.com', '系统管理员', '系统管理员', '2018-10-08 13:32:47', '2019-03-12 20:39:40', '1');
+INSERT INTO `ums_admin` VALUES ('3', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20190129/170157_yIl3_1767531.jpg', 'admin@163.com', '系统管理员', '系统管理员', '2018-10-08 13:32:47', '2019-03-24 21:39:06', '1');
 
 -- ----------------------------
 -- Table structure for `ums_admin_login_log`
@@ -1812,7 +1804,7 @@ CREATE TABLE `ums_admin_login_log` (
   `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `user_agent` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '浏览器登录类型',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='后台用户登录日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='后台用户登录日志表';
 
 -- ----------------------------
 -- Records of ums_admin_login_log
@@ -1848,6 +1840,10 @@ INSERT INTO `ums_admin_login_log` VALUES ('32', '3', '2019-03-08 15:24:19', '0:0
 INSERT INTO `ums_admin_login_log` VALUES ('33', '3', '2019-03-12 09:44:24', '0:0:0:0:0:0:0:1', null, null);
 INSERT INTO `ums_admin_login_log` VALUES ('34', '3', '2019-03-12 09:54:25', '0:0:0:0:0:0:0:1', null, null);
 INSERT INTO `ums_admin_login_log` VALUES ('35', '3', '2019-03-12 20:39:40', '0:0:0:0:0:0:0:1', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('36', '3', '2019-03-22 21:43:51', '0:0:0:0:0:0:0:1', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('37', '3', '2019-03-23 09:56:17', '0:0:0:0:0:0:0:1', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('38', '3', '2019-03-23 23:30:37', '0:0:0:0:0:0:0:1', null, null);
+INSERT INTO `ums_admin_login_log` VALUES ('39', '3', '2019-03-24 21:39:06', '0:0:0:0:0:0:0:1', null, null);
 
 -- ----------------------------
 -- Table structure for `ums_admin_permission_relation`
@@ -1977,7 +1973,7 @@ CREATE TABLE `ums_member` (
 -- ----------------------------
 INSERT INTO `ums_member` VALUES ('3', '4', 'windy', 'E10ADC3949BA59ABBE56E057F20F883E', 'windy', '18061581848', '1', '2018-08-03 16:46:38', null, '0', '2019-03-11', '天津', '程序猿', null, null, null, null, null, null);
 INSERT INTO `ums_member` VALUES ('4', '4', 'zhengsan', 'E10ADC3949BA59ABBE56E057F20F883E', 'zhengsan', '18061581847', '1', '2018-11-12 14:12:04', null, '0', '2019-03-18', '北京', '公务员', null, null, null, null, null, null);
-INSERT INTO `ums_member` VALUES ('5', '4', 'lisi', 'E10ADC3949BA59ABBE56E057F20F883E', 'lisi', '18061581841', '1', '2018-11-12 14:12:38', null, '0', '2019-03-18', '上海', '项目经理', null, null, null, null, null, null);
+INSERT INTO `ums_member` VALUES ('5', '4', 'lisi', 'e10adc3949ba59abbe56e057f20f883e', 'lisi', '18061581841', '1', '2018-11-12 14:12:38', null, '0', '2019-03-18', '上海', '项目经理', null, null, null, null, null, null);
 INSERT INTO `ums_member` VALUES ('6', '4', 'wangwu', 'E10ADC3949BA59ABBE56E057F20F883E', 'wangwu', '18061581842', '1', '2018-11-12 14:13:09', null, '1', '2019-03-17', '济南', '人事主管', null, null, null, null, null, null);
 INSERT INTO `ums_member` VALUES ('7', '4', 'lion', 'E10ADC3949BA59ABBE56E057F20F883E', 'lion', '18061581845', '1', '2018-11-12 14:21:39', null, '1', '2019-03-17', '青岛', '项目组长', null, null, null, null, null, null);
 INSERT INTO `ums_member` VALUES ('13', null, '666', 'E10ADC3949BA59ABBE56E057F20F883E', '454', '43567698987', '1', null, null, '0', '2019-03-08', '33', '234', null, null, null, null, null, null);
