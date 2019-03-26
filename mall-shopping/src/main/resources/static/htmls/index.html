@@ -30,7 +30,7 @@
 
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery.min.js"></script>
-
+	<!-- <script src ="js/"></script> -->
 	<!-- Core JavaScript Files -->
 	<script src="js/bootstrap-3.1.1.min.js"></script>
 
@@ -42,11 +42,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
-					欢迎来到Pray电商,请<a href="login.html">登录</a>
+					<img id ="logoPage" src ="" /><span id = "memberName"></span>欢迎您
 				</div>
 				<div class="col-xs-6">
 					<ul class="top-link">
-						<li><a href="/goToAccount"><span class="glyphicon glyphicon-user"></span> 我的账户</a></li>
+						<li id = "accountUnit" class="dropdown"><a href="/goToAccount"  class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 我的账户</a>
+							<div class="dropdown-menu">
+									<div class="dropdown-inner">
+										<ul class="list-unstyled">
+											<li><a href="/goToAccount"><span class="glyphicon glyphicon-user"></span> 我的账户</a></li>
+										</ul>
+										<ul class="list-unstyled">
+											<li><a href="#"><span class="glyphicon glyphicon-off"></span> 退出系统</a></li>
+										</ul>
+									</div>
+								</div>
+						</li>
 						<li><a href="/goToContact"><span class="glyphicon glyphicon-envelope"></span> 联系我们</a></li>
 					</ul>
 				</div>
@@ -97,11 +108,10 @@
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="goToCategory">Dell</a></li>
-									<li><a href="goToCategory">Asus</a></li>
+									<li><a href="goToCategory">iphone</a></li>
+									<li><a href="goToCategory">huawei</a></li>
 									<li><a href="goToCategory">Samsung</a></li>
 									<li><a href="goToCategory">Lenovo</a></li>
-									<li><a href="goToCategory">Acer</a></li>
 								</ul>
 							</div>
 						</div>
@@ -1311,8 +1321,22 @@
 			getNewProduct();
 			getDiscountProduct();
 			getBrandList();
+			getUserName()
 			// loadPage(pageIndex, pageSize);
 		});
+		function getUserName(){
+			$.get("getUserName",
+				function (data) {
+					sessionStorage.setItem("member",JSON.stringify(data));
+					var member = sessionStorage.getItem("member");
+					console.log(JSON.parse(member).nickname);
+					$("#memberName").append(JSON.parse(member).nickname);
+					var logo = JSON.parse(member).icon;
+					$("#logoPage").attr("src", logo);
+					// $("#logoPage").append(JSON.parse(member).icon);
+					// document.getElementById("#logoPage").attr('src','JSON.parse(member).icon');
+			});
+		}
 		function getBrandList(){
 			var mycontent = $(".brandList");
 			var htmls = "";

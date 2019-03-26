@@ -7,10 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cacro.mall.shopping.service.IUmsMemberService;
+import com.macro.mall.model.UmsMember;
 
 @RestController
 public class UmsMemberController {
@@ -47,4 +49,12 @@ public class UmsMemberController {
 		}
 		return str;
 	}
+	@RequestMapping(value="/getUserName",method = RequestMethod.GET)
+	@ResponseBody
+	public UmsMember getUserName(HttpSession session) {
+		String name = (String) session.getAttribute("user");
+		UmsMember member = umsMemberService.getByUsername(name);
+		return member;
+	}
+	
 }

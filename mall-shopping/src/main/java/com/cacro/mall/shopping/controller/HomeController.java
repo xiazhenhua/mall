@@ -40,6 +40,7 @@ public class HomeController {
 	public List<PmsProduct> getNewProductList() {
 		return homeService.getNewProductList();
 	}
+	
 	@RequestMapping(value="/discountProductList",method= RequestMethod.GET)
 	@ResponseBody
 	public List<PmsProductLadderVO> getDiscountProductList() {
