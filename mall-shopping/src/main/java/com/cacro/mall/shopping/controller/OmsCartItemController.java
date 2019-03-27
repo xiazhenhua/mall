@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -73,7 +74,14 @@ public class OmsCartItemController {
                                  @RequestParam Integer quantity,HttpSession session) {
     	String name = (String) session.getAttribute("user");
         UmsMember member = memberService.getByUsername(name);
-        int count = cartItemService.updateQuantity(id,member.getId(),quantity);
+        int count;
+        if (quantity.equals(0)) {
+        	List<Long> ids = new ArrayList<>();
+        	ids.add(id);
+        	count = cartItemService.delete(member.getId(), ids);
+		}else {
+			count = cartItemService.updateQuantity(id,member.getId(),quantity);
+		}
         if (count > 0) {
             return new CommonResult().success(count);
         }
