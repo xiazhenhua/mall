@@ -1338,11 +1338,17 @@
 			$.get("getUserName",
 				function (data) {
 					sessionStorage.setItem("member",JSON.stringify(data));
+					var storage = window.localStorage;
+					storage.setItem("member",JSON.stringify(data));
+
 					var member = sessionStorage.getItem("member");
 					console.log(JSON.parse(member).nickname);
 					$("#memberName").append(JSON.parse(member).nickname);
 					var logo = JSON.parse(member).icon;
 					$("#logoPage").attr("src", logo);
+					
+					var localMember = localStorage.getItem("member");
+					// alert(JSON.parse(localMember).nickname);
 					// $("#logoPage").append(JSON.parse(member).icon);
 					// document.getElementById("#logoPage").attr('src','JSON.parse(member).icon');
 			});

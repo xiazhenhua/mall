@@ -24,6 +24,12 @@ public class UrlController {
 	public String goToIndex() {
 		return "index";
 	}
+	
+	@RequestMapping("/paySuccessReturnPage")
+	public String paySuccessReturnPage() {
+		return "return";
+	}
+
 	@RequestMapping("/goToAccount")
 	public String goToAccount(){
 		return "account";

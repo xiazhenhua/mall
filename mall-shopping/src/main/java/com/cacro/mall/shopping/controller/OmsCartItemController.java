@@ -136,7 +136,7 @@ public class OmsCartItemController {
     }
     
     @ApiOperation("清空购物车")
-    @RequestMapping(value = "/clear", method = RequestMethod.POST)
+    @RequestMapping(value = "/clear")
     @ResponseBody
     public Object clear(HttpSession session) {
     	String name = (String) session.getAttribute("user");
