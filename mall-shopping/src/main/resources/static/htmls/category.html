@@ -97,7 +97,7 @@
 						<div class="dropdown-menu">
 							<div class="dropdown-inner">
 								<ul class="list-unstyled">
-									<li><a href="#" onclick ="">Apple</a></li>
+									<li><a href="/goToCategory">Apple</a></li>
 									<li><a href="/goToCategory">HuaWei</a></li>
 									<li><a href="/goToCategory">Samsung</a></li>
 									<li><a href="/goToCategory">Lenovo</a></li>
@@ -377,7 +377,6 @@
 			var htmls = "";
 			mycontent.innerHTML = "";
 			$.get("/home/getProductCategory", {
-					// globalStr: globalStr,
 					curpage: pageIndex,
 					page_Size: pageSize
 				},
@@ -385,17 +384,22 @@
 					var jsonArray = data;
 					for (var temp in jsonArray) {
 						htmls += '<div class="col-lg-4 col-md-4 col-xs-12"><div class="product">' +
-							'<div class="image"><a href="/getProduct"><img src="' + jsonArray[temp].pic +
-							'" /></a></div><div class="buttons">' +
+							'<div class="image"><a href="#"><img src="' + jsonArray[temp].pic +
+							'" onclick="gotoProductPage(\''+jsonArray[temp].id+'\')" /></a></div><div class="buttons">' +
 							'<a class="btn cart" href="#" onclick="addToCart(\''+jsonArray[temp].id+'\')"><span class="glyphicon glyphicon-shopping-cart"></span></a><a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>' +
 							'<a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a></div><div class="caption"><div class="name">' +
-							'<h3><a href="/getProduct">' + jsonArray[temp].name + '</a></h3></div><div class="price">￥' + jsonArray[temp].price +
+							'<h3><a href="#" onclick="gotoProductPage(\''+jsonArray[temp].id+'\')">' + jsonArray[temp].name + '</a></h3></div><div class="price">￥' + jsonArray[temp].price +
 							'<span>￥' + (parseInt(jsonArray[temp].price, 10) + parseInt(200, 10)) + '</span></div>' +
 							'<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span' +
 							'class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div></div></div></div>'
 					}
 					mycontent.html(htmls);
 				});
+		}
+		function gotoProductPage(productId){
+			sessionStorage.setItem("proId",productId);
+			window.location.href="/getProduct";
+			
 		}
 		function addToCart(id){
 			$.ajax({
@@ -406,10 +410,13 @@
 				},
 				async: false,
 				success: function (data) {
-					if(data ==null){
-						alert("系统错误")
+					if(data.data ==null){
+						alert("您尚未登录，或者登录已过期，请重新登录");
+						window.location.href="/login";
+					}else{
+						alert("加入购物车成功！");
+						window.location.href="/goToIndex";
 					}
-					alert("加入购物车成功！");
 					
 				}
 			});

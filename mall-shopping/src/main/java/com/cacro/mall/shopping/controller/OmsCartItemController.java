@@ -40,7 +40,6 @@ public class OmsCartItemController {
     	String name = (String) session.getAttribute("user");
     	cartItem.setMemberNickname(name);
     	cartItem.setProductId(id);
-//    	cartItem.set
         int count = cartItemService.add(cartItem);
         if (count > 0) {
             return new CommonResult().success(count);
@@ -80,7 +79,8 @@ public class OmsCartItemController {
         	ids.add(id);
         	count = cartItemService.delete(member.getId(), ids);
 		}else {
-			count = cartItemService.updateQuantity(id,member.getId(),quantity);
+			Long longId = id.longValue();
+			count = cartItemService.updateQuantity(longId,member.getId(),quantity);
 		}
         if (count > 0) {
             return new CommonResult().success(count);
