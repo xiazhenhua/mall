@@ -8,7 +8,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface OmsCartItemMapper {
-    int countByExample(OmsCartItemExample example);
+    long countByExample(OmsCartItemExample example);
 
     int deleteByExample(OmsCartItemExample example);
 

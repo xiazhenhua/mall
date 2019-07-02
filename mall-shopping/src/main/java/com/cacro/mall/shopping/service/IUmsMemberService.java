@@ -1,6 +1,6 @@
 package com.cacro.mall.shopping.service;
 
-import com.cacro.mall.shopping.model.CommonResult;
+import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.model.UmsMember;
 import org.springframework.transaction.annotation.Transactional;
 

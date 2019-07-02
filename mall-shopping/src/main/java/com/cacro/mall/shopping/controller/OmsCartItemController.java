@@ -1,11 +1,11 @@
 package com.cacro.mall.shopping.controller;
 
-import com.cacro.mall.shopping.model.CommonResult;
-import com.cacro.mall.shopping.service.IOmsCartItemService;
-import com.cacro.mall.shopping.service.IUmsMemberService;
+import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.model.OmsCartItem;
-import com.macro.mall.model.UmsMember;
-
+import com.macro.mall.portal.domain.CartProduct;
+import com.macro.mall.portal.domain.CartPromotionItem;
+import com.macro.mall.portal.service.OmsCartItemService;
+import com.macro.mall.portal.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -35,90 +35,70 @@ public class OmsCartItemController {
     @ApiOperation("添加商品到购物车")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public Object add(@RequestParam Long id,HttpSession session) {
-    	OmsCartItem cartItem = new OmsCartItem();
-    	String name = (String) session.getAttribute("user");
-    	cartItem.setMemberNickname(name);
-    	cartItem.setProductId(id);
+    public CommonResult add(@RequestBody OmsCartItem cartItem) {
         int count = cartItemService.add(cartItem);
         if (count > 0) {
-            return new CommonResult().success(count);
+            return CommonResult.success(count);
         }
-        return new CommonResult().failed();
+        return CommonResult.failed();
     }
 
     @ApiOperation("获取某个会员的购物车列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public Object list(HttpSession session) {
-    	String name = (String) session.getAttribute("user");
-        UmsMember member = memberService.getByUsername(name);
-        List<OmsCartItem> cartItemList = cartItemService.list(member.getId());
-        return new CommonResult().success(cartItemList);
+    public CommonResult<List<OmsCartItem>> list() {
+        List<OmsCartItem> cartItemList = cartItemService.list(memberService.getCurrentMember().getId());
+        return CommonResult.success(cartItemList);
     }
 
     @ApiOperation("获取某个会员的购物车列表,包括促销信息")
     @RequestMapping(value = "/list/promotion", method = RequestMethod.GET)
     @ResponseBody
-    public Object listPromotion() {
-//        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(memberService.getCurrentMember().getId());
-//        return new CommonResult().success(cartPromotionItemList);
-    	return null;
+    public CommonResult<List<CartPromotionItem>> listPromotion() {
+        List<CartPromotionItem> cartPromotionItemList = cartItemService.listPromotion(memberService.getCurrentMember().getId());
+        return CommonResult.success(cartPromotionItemList);
     }
 
     @ApiOperation("修改购物车中某个商品的数量")
     @RequestMapping(value = "/update/quantity", method = RequestMethod.POST)
     @ResponseBody
-    public Object updateQuantity(@RequestParam Long id,
-                                 @RequestParam Integer quantity,HttpSession session) {
-    	String name = (String) session.getAttribute("user");
-        UmsMember member = memberService.getByUsername(name);
-        int count;
-        if (quantity.equals(0)) {
-        	List<Long> ids = new ArrayList<>();
-        	ids.add(id);
-        	count = cartItemService.delete(member.getId(), ids);
-		}else {
-			Long longId = id.longValue();
-			count = cartItemService.updateQuantity(longId,member.getId(),quantity);
-		}
+    public CommonResult updateQuantity(@RequestParam Long id,
+                                       @RequestParam Integer quantity) {
+        int count = cartItemService.updateQuantity(id, memberService.getCurrentMember().getId(), quantity);
         if (count > 0) {
-            return new CommonResult().success(count);
+            return CommonResult.success(count);
         }
-        return new CommonResult().failed();
+        return CommonResult.failed();
     }
 
     @ApiOperation("获取购物车中某个商品的规格,用于重选规格")
     @RequestMapping(value = "/getProduct/{productId}", method = RequestMethod.GET)
     @ResponseBody
-    public Object getCartProduct(@PathVariable Long productId) {
-//        CartProduct cartProduct = cartItemService.getCartProduct(productId);
-//        return new CommonResult().success(cartProduct);
-    	return null;
+    public CommonResult<CartProduct> getCartProduct(@PathVariable Long productId) {
+        CartProduct cartProduct = cartItemService.getCartProduct(productId);
+        return CommonResult.success(cartProduct);
     }
 
     @ApiOperation("修改购物车中商品的规格")
     @RequestMapping(value = "/update/attr", method = RequestMethod.POST)
     @ResponseBody
-    public Object updateAttr(@RequestBody OmsCartItem cartItem) {
+    public CommonResult updateAttr(@RequestBody OmsCartItem cartItem) {
         int count = cartItemService.updateAttr(cartItem);
         if (count > 0) {
-            return new CommonResult().success(count);
+            return CommonResult.success(count);
         }
-        return new CommonResult().failed();
+        return CommonResult.failed();
     }
 
     @ApiOperation("删除购物车中的某个商品")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
-    public Object delete(@RequestParam("ids") List<Long> ids,HttpSession session) {
-    	String name = (String) session.getAttribute("user");
-        UmsMember member = memberService.getByUsername(name);
-        int count = cartItemService.delete(member.getId(),ids);
+    public CommonResult delete(@RequestParam("ids") List<Long> ids) {
+        int count = cartItemService.delete(memberService.getCurrentMember().getId(), ids);
         if (count > 0) {
-            return new CommonResult().success(count);
+            return CommonResult.success(count);
         }
-        return new CommonResult().failed();
+        return CommonResult.failed();
     }
     
     @ApiOperation("计算购物车总价")
@@ -138,13 +118,11 @@ public class OmsCartItemController {
     @ApiOperation("清空购物车")
     @RequestMapping(value = "/clear")
     @ResponseBody
-    public Object clear(HttpSession session) {
-    	String name = (String) session.getAttribute("user");
-        UmsMember member = memberService.getByUsername(name);
-        int count = cartItemService.clear(member.getId());
+    public CommonResult clear() {
+        int count = cartItemService.clear(memberService.getCurrentMember().getId());
         if (count > 0) {
-            return new CommonResult().success(count);
+            return CommonResult.success(count);
         }
-        return new CommonResult().failed();
+        return CommonResult.failed();
     }
 }

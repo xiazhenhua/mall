@@ -1,5 +1,6 @@
 package com.macro.mall.service.impl;
 
+import cn.hutool.json.JSONUtil;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
@@ -19,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * oss上传管理Service实现类
  * Created by macro on 2018/5/17.
  */
 @Service
@@ -70,13 +72,13 @@ public class OssServiceImpl implements OssService {
 			byte[] binaryData = postPolicy.getBytes("utf-8");
 			String policy = BinaryUtil.toBase64String(binaryData);
 			String signature = ossClient.calculatePostSignature(postPolicy);
-//			String callbackData = BinaryUtil.toBase64String(JsonUtil.objectToJson(callback).getBytes("utf-8"));
+			String callbackData = BinaryUtil.toBase64String(JSONUtil.parse(callback).toString().getBytes("utf-8"));
 			// 返回结果
 			result.setAccessKeyId(ossClient.getCredentialsProvider().getCredentials().getAccessKeyId());
 			result.setPolicy(policy);
 			result.setSignature(signature);
 			result.setDir(dir);
-//			result.setCallback(callbackData);
+			result.setCallback(callbackData);
 			result.setHost(action);
 			result.setSuccess_action_status("200");
 		} catch (Exception e) {
